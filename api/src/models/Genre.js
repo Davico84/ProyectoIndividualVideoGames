@@ -8,5 +8,17 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-  });
-};
+    imagen: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    activate:{
+      type: DataTypes.BOOLEAN,
+      defaultValue:true
+    },
+    create:{
+      type: DataTypes.BOOLEAN,
+      defaultValue:true
+    },
+  },{ timestamps:false});
+};  
