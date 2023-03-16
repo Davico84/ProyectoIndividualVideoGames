@@ -1,17 +1,20 @@
 require('dotenv').config();
 const {API_KEY,URL_MAIN,URL_ID,URL_NAME}= process.env;
 const axios = require("axios");
-
+const {Op}= require("sequelize");
 const {Videogame, Genre}=require("../db")
+
 const cleanApi =(array)=>array.map(game=>{
                 return {
                         id: game.id,
                         nombre: game.name,
-                        descripcion: "",
+                        descripcion: game.description ? game.description:"",
                         plataformas: game.platforms ,
+                        plataformas: game.platforms.map(el=> el.platform.name),
                         image: game.background_image,
                         fecLan: game.released,
                         rating:game .rating,
+                        genres: game.genres.map(el=> el.name),
                         create: false,   
                 }
 })
@@ -24,15 +27,48 @@ const getAllVideoGamesCtrlr=async()=>{
     const dataAPI2=cleanApi(resultraw2.data.results)
     const dataAPI3=cleanApi(resultraw3.data.results)
     
-    const dataBD= await Videogame.findAll()
+    const dataDB= await Videogame.findAll()
 
-    return [...dataAPI1,...dataAPI2,...dataAPI3,...dataBD]
+    return [...dataAPI1,...dataAPI2,...dataAPI3,...dataDB]
 }
-const getVideoGameByIdCtrlr=()=>{
+const getVideoGameByNameCtrlr= async(name)=>{
+    const resultraw= await axios.get(`${URL_NAME}${name}&key=${API_KEY}`)
+    
+    const dataAPI=cleanApi(resultraw.data.results)
+
+    const dataDB= await Videogame.findAll({where:{
+                                            nombre: { [Op.iLike]: `%${name}%` }}
+                                        // , attributes:  {exclude:['PasoAPaso']}
+                                        ,include:{
+                                            model: Genre, attributes:['nombre'],
+                                            through:{ attributes:[]}
+                                         } 
+                                        });
+    //console.log("dataBD_NAME", dataDB);
+    return [...dataAPI,...dataDB]
 
 }
-const getVideoGameByNameCtrlr=()=>{
+const getVideoGameByIdCtrlr=async(id,source)=>{
+    
 
+    try {
+        const result=
+                source==="API" 
+                        ? await axios.get(`${URL_ID}${id}?key=${API_KEY}`)
+        
+                        : await Videogame.findAll( {where:{ id:id}
+                                                                ,include:{
+                                                                    model: Genre, attributes:['nombre'],
+                                                                    through:{ attributes:[]}
+                                                                        }  
+                                                                })
+         
+        return source==="API" ? cleanApi([result.data])
+                              : result   
+    } catch (error) {
+        return  {error:"el ID ingresado no obtuvo coincidencias en la API "}
+    }
+        
 }
 const postVideoGameCtrlr =()=>{
 
