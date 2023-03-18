@@ -9,7 +9,7 @@ const cleanApi =(array)=>array.map(game=>{
                         id: game.id,
                         nombre: game.name,
                         descripcion: game.description ? game.description:"",
-                        plataformas: game.platforms ,
+                        
                         plataformas: game.platforms.map(el=> el.platform.name),
                         image: game.background_image,
                         fecLan: game.released,
@@ -70,8 +70,17 @@ const getVideoGameByIdCtrlr=async(id,source)=>{
     }
         
 }
-const postVideoGameCtrlr =()=>{
+const postVideoGameCtrlr =async (nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs)=>{
+    console.log("arreglo Generos",Arrgenrs);
+    const genrsDB= await Genre.findAll();
+    if(genrsDB.length===0) return {error:"No existen generos registros en la BD."} 
+    
+    const newVideoGame= await Videogame.create({nombre,descripcion,plataformas,image,feclan,rating})
+    const regGenrs= await Genre.findAll({where: { nombre: Arrgenrs }})
+    
+    if(regGenrs.length>0) newVideoGame.addGenre(regGenrs)
 
+    return newVideoGame
 }
 module.exports ={getAllVideoGamesCtrlr,getVideoGameByIdCtrlr,
     getVideoGameByNameCtrlr, postVideoGameCtrlr}

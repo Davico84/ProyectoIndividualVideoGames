@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       type:DataTypes.STRING,
       allowNull: false
     },
-    fecLan:{
+    feclan:{
       type:DataTypes.DATEONLY,
       allowNull: false
     },

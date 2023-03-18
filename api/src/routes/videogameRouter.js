@@ -10,7 +10,6 @@ const {validateVideoGamePost} =require("../middelware/validate")
 videogameRouter.get("/", getVideoGamesHandler);
 // videogameRouter.get("/name", getVideoGameByNameHandler);
 videogameRouter.get("/:id",getVideoGameByIdHandler );
-videogameRouter.post("/",validateVideoGamePost);
-// videogameRouter.post("/",validateVideoGamePost, postVideoGameHandler);
+videogameRouter.post("/",validateVideoGamePost, postVideoGameHandler);
 
 module.exports= videogameRouter;

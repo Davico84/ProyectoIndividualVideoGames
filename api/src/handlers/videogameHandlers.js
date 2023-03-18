@@ -27,8 +27,11 @@ const getVideoGameByIdHandler=async (req,res)=>{
     }
 }
 const postVideoGameHandler=async(req,res)=>{
+    const {nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs} =req.body;
+    // console.log("arreglo Generos",Arrgenrs);
+    const result= await postVideoGameCtrlr(nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs)
     try {
-        res.status(200).json({msg:"Ruta POST"})
+        res.status(200).json(result)
     } catch (error) {
          res.status(400).json({error: error.message})
     }
