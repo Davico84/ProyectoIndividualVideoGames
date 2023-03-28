@@ -45,6 +45,7 @@ const Landing = () => {
             <div className={styles.parte3_cabecera1_text}>Injustice: Gods Among Us Ultimate Edition</div>
             <div className={styles.parte3_cabecera2_text}>The Witcher 3: Wild Hunt</div>
             <div className={styles.parte3_cabecera3_text}>Tomb Raider (2013)</div>
+            
       </div>
       <div className={styles.parte4}>
        <div className={styles.parte4_fondo}/>  

@@ -6,4 +6,4 @@ const Acerca = () => {
   )
 }
 
-export default Acerca
+export default Acerca 
