@@ -1,0 +1,569 @@
+
+
+.main{
+
+    position: relative;
+    width: 1500px;
+    height: 3453px;
+    overflow: scroll;
+
+    background: var(--variable-color-fondo-negro);
+}
+.main_parte1{
+    position: absolute;
+    width: 1500px;
+    height: 910px;
+    left: 0px;
+    top: -3px;
+}
+.main_foto1{
+    position: absolute;
+    width: 1500px;
+    height: 831px;
+    left: 0px;
+    top: -3px;
+    
+    
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/redy\ 3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_NavBar{
+        position: absolute;
+    width: 1500px;
+    height: 117px;
+    left: 0px;
+    top: 0px;
+
+    background: var(--variable-color-fondo-negro);
+    opacity: 0.3;
+}
+.main_NavBar_Menu1{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 619px;
+    top: 32px;
+    
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 44px;
+    line-height: 55px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color: var(--variable-color-Letra-VerdeNeon);
+}
+.main_NavBar_Menu1:hover{
+    /* background-color: white; */
+    font-size: 50px;
+}
+.main_NavBar_Menu2:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_Menu2{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 799px;
+    top: 36px;
+
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+
+    font-size: 36px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+        justify-content: space-around;
+    color:  var(--variable-color-fondo-blanco);
+}
+.main_NavBar_Menu3{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 991px;
+    top: 36px;
+    
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 33px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color:  var(--variable-color-fondo-blanco);
+}
+.main_NavBar_Menu3:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_Menu4{
+    position: absolute;
+    width: 246px;
+    height: 54px;
+    left: 1183px;
+    top: 36px;
+    
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 33px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color:  var(--variable-color-fondo-blanco);
+}
+.main_NavBar_Menu4:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_icons{
+    position: absolute;
+    width: 248px;
+    height: 97.92px;
+    left: 30px;
+    top: 17px;
+
+}
+.main_NavBar_icon1{
+    position: absolute;
+    width: 70px;
+    height: 75px;
+    left: calc(50% - 90.17px/2 - 517.09px);
+    top: calc(50% - 65px/2 - 1660.54px);
+    background:  var(--variable-color-fondo-blanco);
+    
+    background: url(../../images/Facebook.png) ;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main_NavBar_icon1:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_NavBar_icon2{
+    position: absolute;
+    width: 70px;
+    height: 75px;
+    left: calc(50% - 90.17px/2 - 598.09px);
+    top: calc(50% - 65px/2 - 1660.54px);
+    background:  var(--variable-color-fondo-blanco);
+    
+    background: url(../../images/Instagram.png) ;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+
+}
+.main_NavBar_icon2:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_NavBar_icon3{
+        position: absolute;
+    width: 69px;
+    height: 57px;
+    left: calc(50% - 94.17px/2 - 674.09px);
+    top: calc(50% - 42px/2 - 1660.54px);
+    background:  var(--variable-color-fondo-blanco);
+    background: url(../../images/Vectortwt.png) ;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main_NavBar_icon3:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_fonfo_titu{
+    /* fondo titulo */
+    position: absolute;
+    width: 557px;
+    height: 503px;
+    left: 0px;
+    top: 202px;
+
+    background: var(--variable-color-fondo-neon);
+    opacity: 0.25;
+    border-radius: 0px 38px 38px 0px;
+}
+.main_titulo{
+    /* titulo */
+    position: absolute;
+    width: 472px;
+    height: 324px;
+    left: 121px;
+    top: 263px;
+
+    font-size: 100px;
+    line-height: 125px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--variable-color-fondo-blanco);
+}
+
+.main_parte1_fin{
+    /* Rectangle 1 */
+    position: absolute;
+    width: 1500px;
+    height: 202px;
+    left: 0px;
+    top: 705px;
+
+    background:  var(--variable-color-fondo-blanco);
+    opacity: 0.2;
+}
+.main_parte1_boton{
+    /* Ver MAs */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 242px;
+    height: 76px;
+    left: 1185px;
+    top: 730px;
+
+    background: var(--variable-color-Letra-VerdeNeon);
+    mix-blend-mode: normal;
+    border: 3px solid var(--variable-color-fondo-negro);
+}
+.main_parte1_boton_texto:hover{
+    font-size: 40px;
+}
+.main_parte1_boton_texto{
+    /* Ver MAs */
+    position: absolute;
+    width: 166px;
+    height: 38px;
+    left: 1223px;
+    top: 749px;
+    
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 30px;
+    line-height: 38px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    
+    color:var(--variable-color-fondo-negro);;
+}
+.parte2{
+    /* Parte 2 */
+    position: absolute;
+    width: 1500px;
+    height: 467.76px;
+    left: 0px;
+    top: 828px;
+    
+    
+    background: var(--variable-color-fondo-blanco);
+}
+.parte2_subtitulo{
+    position: absolute;
+    width: 711px;
+    height: 55.1px;
+    left: 451px;
+    top: 50px;
+
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 35px;
+    line-height: 55px;
+    /* or 157% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.4em;
+
+    color:var(--variable-color-fondo-negro)
+}
+.parte2_contenido{
+    position: absolute;
+    width: 1100px;
+    height: 444.16px;
+    left: 183px;
+    top: 35px;
+
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 20px;
+    line-height: 36px;
+    /* or 180% */
+
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: 0.40em;
+
+    color: var(--variable-color-fondo-negro);
+}
+.parte2_raya_1{
+    box-sizing: border-box;
+    position: relative;
+    width: 1137px;
+    height: 55.1px;
+    left: 189px;
+    top: 35px;
+
+    border-width: 5px 5px 0px 0px;
+    border-style: solid;
+    border-color: var(--variable-color-fondo-neon);
+    border-radius: 0px;
+    
+}
+.parte2_raya_2{
+    box-sizing: border-box;
+    position: relative;
+    width: 1137px;
+    height: 55.1px;
+    left: 140px;
+    top: 325px;
+
+    border-width: 0px 0px 5px 5px;
+    border-style: solid;
+    border-color: var(--variable-color-fondo-neon);
+    border-radius: 0px;
+}
+.parte3{
+    position: absolute;
+    width: 1500px;
+    height: 1511px;
+    left: 0px;
+    top: 1296px;
+
+    opacity: 0.87;
+}
+.parte3_fondo{
+    position: relative;
+    width: 1500px;
+    height: 1511px;
+    left: 0px;
+  
+
+    background: url(../../images/portal.jpg);
+    opacity: 0.77;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parte3_caja1{
+    position: absolute;
+    width: 416px;
+    height: 416.16px;
+    left: 46px;
+    top: 790px;
+    
+    background: url(../../images/justice\ league.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parte3_caja2{
+    position: absolute;
+    width: 416px;
+    height: 416.16px;
+    left: 542px;
+    top: 790px;
+
+    background: url(../../images/witcher\ 3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parte3_caja3{
+    position: absolute;
+    width: 416px;
+    height: 413.24px;
+    left: 1037px;
+    top: 790px;
+
+    background: url(../../images/tomb\ raider.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.parte3_cabecera{
+    position: absolute;
+    width: 416px;
+    height: 349px;
+    left: 540px;
+    top: 140px;
+
+    background: url(../../images/poly.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.parte3_cabecera_text{
+    position: absolute;
+    width: 342px;
+    height: 118.62px;
+    left: 85px;
+    top: 500px;
+
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 20px;
+    line-height: 30px;
+    /* or 150% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.4em;
+
+    color: var(--variable-color-fondo-negro);
+}
+.parte3_cabecera1{
+    position: absolute;
+    width: 416px;
+    height: 89.45px;
+    left: 46px;
+    top: 700px;
+    
+    background: var(--variable-color-fondo-crema);
+    border-radius: 0px 15px 0px 0px;
+}
+.parte3_cabecera2{
+    position: absolute;
+    width: 416px;
+    height: 89.45px;
+    left: 542px;
+    top: 700px;
+
+    background: var(--variable-color-fondo-crema);
+    border-radius: 15px 15px 0px 0px;
+}
+.parte3_cabecera3{
+    position: absolute;
+    width: 416px;
+    height: 89.45px;
+    left: 1037px;
+    top: 700px;
+
+    background: var(--variable-color-fondo-crema);
+    border-radius: 15px 0px 0px 0px;
+}
+.parte3_cabecera1_text{
+    position: absolute;
+    width: 380px;
+    height: 118.62px;
+    left: 65px;
+    top: 688px;
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 27px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.20em;
+    color: var(--variable-color-fondo-blanco);
+}
+.parte3_cabecera2_text{
+    position: absolute;
+    width: 342px;
+    height: 118.62px;
+    left: 580px;
+    top: 690px;
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 27px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.20em;
+    color: var(--variable-color-fondo-blanco);
+}
+.parte3_cabecera3_text{
+    position: absolute;
+    width: 342px;
+    height: 118.62px;
+    left: 1080px;
+    top: 690px;
+    font-family: var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    font-size: 27px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: var(--variable-color-fondo-blanco);
+}
+.parte4{
+
+    position: absolute;
+    width: 1500px;
+    height: 663px;
+    left: 0px;
+    top: 2748px;
+}
+.parte4_fondo{
+    position: absolute;
+    width: 1500px;
+    height: 603.38px;
+    left: 0px;
+    /* top: 2300px; */
+
+    background: url(../../images/nintend\ g.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parte4_divisor{
+    position: absolute;
+    width: 1500px;
+    height: 120px;
+    left: 0px;
+    top: -60px;
+    
+    background: var(--variable-color-fondo-blanco);
+    opacity: 0.2;
+}
+.parte4_linea_pie{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1078px;
+    height: 203px;
+    left: 422px;
+    top: 400px;
+    
+    border-width: 20px 0px 0px 12px;
+    border-style: solid;
+    
+    border-color: var(--variable-color-fondo-verdeNeon);
+
+}
