@@ -1,4 +1,5 @@
-import { GET_VIDEOGAMES, SET_ERROR } from "./action";
+import { GET_VIDEOGAMES, SET_ERROR,SET_NEXT_PAGE ,SET_PREV_PAGE,SET_FIRST_PAGE,
+         SET_LAST_PAGE,SET_MAX_PAGE } from "./action";
 
 const initialState={
     videoGames:[],
@@ -15,16 +16,23 @@ const rootReducer=(state =initialState, action) =>{
     
     switch (action.type) {
         case GET_VIDEOGAMES:{
-            
             return {...state,videoGames:action.payload}
              }
         case SET_ERROR:
-           
-            return{...state, msgerror:action.payload}   
-    
+            return{...state, msgerror:action.payload}
+        case SET_NEXT_PAGE:
+            return{...state,pagina:state.pagina+1}
+        case SET_PREV_PAGE:
+            return{...state,pagina:state.pagina-1}
+        case SET_FIRST_PAGE:
+            return{...state,pagina:1}
+        case SET_LAST_PAGE:
+            return{...state,pagina:state.maximo}
+         case SET_MAX_PAGE:
+            return{...state,maximo:action.payload}   
         default:
          
-            return{...state}
+        return{...state}
     }
 
 }

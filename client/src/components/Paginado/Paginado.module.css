@@ -34,6 +34,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.boton_first:hover{
+    height: 45px;
+    width: 45px;
+    background-color: var(--variable-color-fondo-naranja);
+    border-radius: 20px;
+}
+
 .boton_prev{
     
     height: 41px;
@@ -43,6 +50,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.boton_prev:hover{
+    height: 45px;
+    width: 45px;
+    background-color: var(--variable-color-fondo-naranja);
+    border-radius: 20px;
 }
 .boton_next{
     
@@ -54,6 +67,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.boton_next:hover{
+    height: 45px;
+    width: 45px;
+    background-color: var(--variable-color-fondo-naranja);
+    border-radius: 20px;
+}
 .boton_last{
     
     height: 41px;
@@ -63,6 +82,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.boton_last:hover{
+    height: 45px;
+    width: 45px;
+    background-color: var(--variable-color-fondo-naranja);
+    border-radius: 20px;
 }
 /* Rectangle 15 */
 

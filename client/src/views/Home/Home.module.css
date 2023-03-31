@@ -3,63 +3,45 @@
     position: relative;
     width: 1500px;
     height: 2100px;
-    background: var(--variable-color-fondo-blanco);
+    background: var(--variable-color-fondo-negro);
 }
 .main_fondo{
     position: absolute;
     width: 1500px;
     height: 2100px;
     
-    top: 120px;
+   
     background: url(../../images/resident\ 3.jpg);
-    opacity: 0.91;
+    /* opacity: 0.91; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.main_titulo{
+.main_titulo_caja{
     position: absolute;
     width: 1500px;
     height: 220px;
     left: 0px;
-    top: 180px;
+    top: 120px;
     /* background: rgb(2,0,36); */
     background: linear-gradient(180deg, rgba(2,0,36,1) 32%, rgba(27,43,147,1) 50%, rgba(1,12,27,1) 72%, rgba(9,59,76,1) 96%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 .main_titulo_texto{
  /* Vista General */
-    position: absolute;
-    width: 750px;
-    height: 66px;
-    left: 447px;
-    top: 250px;
-
     font-family: var(--variable-font-familia);
-    font-style: normal;
-    font-weight: 400;
     font-size: 80px;
     line-height: 100px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
     color: var(--variable-color-fondo-blanco);
 }
 .main_titulo_texto2{
-    /* Vista resumida de todos los juegos en grupos de 15 por pagina. */
-    position: absolute;
-    width: 876px;
-    height: 66px;
-    left: 355px;
-    top: 320px;
     font-family: var(--variable-font-familia);
-    font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 31px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: var(--variable-color-fondo-blanco);
     justify-content: center;
 }
@@ -68,7 +50,7 @@
     width: 1152px;
     height: 90px;
     left: 327px;
-    top: 480px;
+    top: 440px;
     background: var(--variable-color-fondo-gris);
     display: flex;
     justify-content: space-around;
@@ -82,7 +64,7 @@
     width: 291px;
     height: 1570px;
     left: 15px;
-    top: 480px;
+    top: 440px;
     background: var(--variable-color-fondo-gris);
     opacity: 0.81;
     border: 5px solid var(--variable-color-fondo-blanco);
@@ -96,7 +78,7 @@
     width: 1152px;
     height: 1490px;
     left: 327px;
-    top: 560px;
+    top: 520px;
     background: var(--variable-color-fondo-gris);
     opacity: 0.91;
     border: 5px solid var(--variable-color-fondo-blanco);
@@ -115,7 +97,7 @@
     width: 1464px;
     height: 77px;
     left: 15px;
-    top: 400px;
+    top: 350px;
     background: var(--variable-color-fondo-gris);
     border: 5px solid var(--variable-color-fondo-blanco);
     display: flex;

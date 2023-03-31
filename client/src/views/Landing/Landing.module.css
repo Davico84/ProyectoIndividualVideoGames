@@ -20,177 +20,12 @@
     height: 831px;
     left: 0px;
     top: -3px;
-    
-    
-
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/redy\ 3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.main_NavBar{
-        position: absolute;
-    width: 1500px;
-    height: 117px;
-    left: 0px;
-    top: 0px;
 
-    background: var(--variable-color-fondo-negro);
-    opacity: 0.3;
-}
-.main_NavBar_Menu1{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left: 619px;
-    top: 32px;
-    
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-    font-size: 44px;
-    line-height: 55px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    color: var(--variable-color-Letra-VerdeNeon);
-}
-.main_NavBar_Menu1:hover{
-    /* background-color: white; */
-    font-size: 50px;
-}
-.main_NavBar_Menu2:hover{
-    background-color:  var(--variable-color-fondo-blanco);
-    
-    color: var(--variable-color-Letra-rojaneon);
-}
-.main_NavBar_Menu2{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left: 799px;
-    top: 36px;
-
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-
-    font-size: 36px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-        justify-content: space-around;
-    color:  var(--variable-color-fondo-blanco);
-}
-.main_NavBar_Menu3{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left: 991px;
-    top: 36px;
-    
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-    font-size: 33px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    color:  var(--variable-color-fondo-blanco);
-}
-.main_NavBar_Menu3:hover{
-    background-color:  var(--variable-color-fondo-blanco);
-    color: var(--variable-color-Letra-rojaneon);
-}
-.main_NavBar_Menu4{
-    position: absolute;
-    width: 246px;
-    height: 54px;
-    left: 1183px;
-    top: 36px;
-    
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-    font-size: 33px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    color:  var(--variable-color-fondo-blanco);
-}
-.main_NavBar_Menu4:hover{
-    background-color:  var(--variable-color-fondo-blanco);
-    color: var(--variable-color-Letra-rojaneon);
-}
-.main_NavBar_icons{
-    position: absolute;
-    width: 248px;
-    height: 97.92px;
-    left: 30px;
-    top: 17px;
-
-}
-.main_NavBar_icon1{
-    position: absolute;
-    width: 70px;
-    height: 75px;
-    left: calc(50% - 90.17px/2 - 517.09px);
-    top: calc(50% - 65px/2 - 1660.54px);
-    background:  var(--variable-color-fondo-blanco);
-    
-    background: url(../../images/Facebook.png) ;
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main_NavBar_icon1:hover{
-    width: 75px;
-    height: 65px;
-}
-.main_NavBar_icon2{
-    position: absolute;
-    width: 70px;
-    height: 75px;
-    left: calc(50% - 90.17px/2 - 598.09px);
-    top: calc(50% - 65px/2 - 1660.54px);
-    background:  var(--variable-color-fondo-blanco);
-    
-    background: url(../../images/Instagram.png) ;
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  
-
-}
-.main_NavBar_icon2:hover{
-    width: 75px;
-    height: 65px;
-}
-.main_NavBar_icon3{
-        position: absolute;
-    width: 69px;
-    height: 57px;
-    left: calc(50% - 94.17px/2 - 674.09px);
-    top: calc(50% - 42px/2 - 1660.54px);
-    background:  var(--variable-color-fondo-blanco);
-    background: url(../../images/Vectortwt.png) ;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.main_NavBar_icon3:hover{
-    width: 75px;
-    height: 65px;
-}
 .main_fonfo_titu{
     /* fondo titulo */
     position: absolute;
@@ -235,38 +70,12 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 242px;
+    width: 250px;
     height: 76px;
     left: 1185px;
     top: 730px;
+}
 
-    background: var(--variable-color-Letra-VerdeNeon);
-    mix-blend-mode: normal;
-    border: 3px solid var(--variable-color-fondo-negro);
-}
-.main_parte1_boton_texto:hover{
-    font-size: 40px;
-}
-.main_parte1_boton_texto{
-    /* Ver MAs */
-    position: absolute;
-    width: 166px;
-    height: 38px;
-    left: 1223px;
-    top: 749px;
-    
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-    font-size: 30px;
-    line-height: 38px;
-    /* identical to box height */
-    
-    display: flex;
-    align-items: center;
-    
-    color:var(--variable-color-fondo-negro);;
-}
 .parte2{
     /* Parte 2 */
     position: absolute;
@@ -521,47 +330,41 @@
     letter-spacing: 0.2em;
     color: var(--variable-color-fondo-blanco);
 }
-/* .parte4{
-
+/*** ESTILOS BOTÓN SLIDE RIGHT ***/
+.ov_btn_slide_right {
+    background: var(--variable-color-fondo-verdeNeon); /* color de fondo */
+    color:  var(--variable-color-fondo-negro);  /* color de fuente */
+    border: 2px solid var(--variable-color-fondo-negro); /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 38px;
+  }
+  .ov_btn_slide_right:hover {
+    color: var(--variable-color-fondo-blanco); /* color de fuente hover */
+  }
+  .ov_btn_slide_right::after {
+    content: "";
+    background: var(--variable-color-fondo-crema); /* color de fondo hover */
     position: absolute;
-    width: 1500px;
-    height: 663px;
-    left: 0px;
-    top: 2748px;
-}
-.parte4_fondo{
-    position: absolute;
-    width: 1500px;
-    height: 603.38px;
-    left: 0px;
-
-    background: url(../../images/nintend\ g.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.parte4_divisor{
-    position: absolute;
-    width: 1500px;
-    height: 120px;
-    left: 0px;
-    top: -60px;
-    
-    background: var(--variable-color-fondo-blanco);
-    opacity: 0.2;
-}
-.parte4_linea_pie{
-    box-sizing: border-box;
-    position: absolute;
-    width: 1078px;
-    height: 203px;
-    left: 422px;
-    top: 400px;
-    
-    border-width: 20px 0px 0px 12px;
-    border-style: solid;
-    
-    border-color: var(--variable-color-fondo-verdeNeon);
-
-} 
-*/
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov_btn_slide_right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }

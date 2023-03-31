@@ -29,9 +29,11 @@ const Home = () => {
     <>
       <div className={styles.main}>
         <div className={styles.main_fondo}/>
-        <div className={styles.main_titulo}/>
-        <div className={styles.main_titulo_texto}>Listado General</div>
-        <div className={styles.main_titulo_texto2}> Vista resumida de todos los juegos en grupos de 15 por pagina.</div>
+        <div className={styles.main_titulo_caja}>
+          <div className={styles.main_titulo_texto}>Listado General</div>
+          <div className={styles.main_titulo_texto2}> Vista resumida de todos los juegos en grupos de 15 por pagina.</div>
+
+        </div>
         <div className={styles.cuerpo_filtros}>
             <div className={styles.cuerpo_filtros_titulo}>Filtros</div>
             <div className={styles.cuerpo_filtros_titulo_icono}/>

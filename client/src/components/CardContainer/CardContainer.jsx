@@ -30,7 +30,7 @@ const CardContainer = (props) => {
                                 key={videogame.id}
                                 nombre={videogame.nombre} 
                                 genero={videogame.genres} 
-                                imagen={videogame.imagen}
+                                imagen={videogame.image}
                                 creado={videogame.create}
                             /> 
                 })        

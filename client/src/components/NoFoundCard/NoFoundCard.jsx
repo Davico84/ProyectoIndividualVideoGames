@@ -1,8 +1,18 @@
 import React from 'react'
-
-const NoFoundCard = () => {
+import styles from "./NoFoundCard.module.css"
+const NoFoundCard = (props) => {
+  
   return (
-    <div>NoFoundCard</div>
+    <div className={styles.main}>
+
+      <div className={styles.titulo}>
+            Advertencia :
+           
+      </div>
+      <div className={styles.detalle}>
+                {props.error.error}
+             </div>
+    </div>
   )
 }
 
