@@ -1,8 +1,11 @@
 import React from 'react'
-
+import  Pie from "../../components/Pie/Pie"
 const Form = () => {
   return (
-    <div>Form</div>
+    <>
+    
+    <Pie/>
+    </>
   )
 }
 

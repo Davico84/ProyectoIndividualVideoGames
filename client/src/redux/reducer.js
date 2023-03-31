@@ -4,7 +4,7 @@ const initialState={
     videoGames:[],
     videGame:[],
     pagina:1,
-    porPagina:9,
+    porPagina:15,
     input:1,
     maximo:0,
     msgerror:"NULL",

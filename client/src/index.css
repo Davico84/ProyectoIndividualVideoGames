@@ -6,16 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   font-family: 'Black Ops One', cursive;
-
+  --variable-color-fondo-filtro: aquamarine;
   --variable-color-fondo-negro : #000000  ;
   --variable-color-fondo-blanco : #FFFFFF;
   --variable-color-fondo-crema: #FF8800;
+  --variable-color-fondo-azul: #121149;
+  --variable-color-fondo-naranja: #FF5419;
   --variable-color-fondo-verdeNeon: #14FC2B;
+  --variable-color-fondo-gris: #D9D9D9;
   --variable-color-fondo-3 : red;
   --variable-color-fondo-neon: #E630D3;
   --variable-color-Letra-VerdeNeon: #14FC2B;
   --variable-color-Letra-rojaneon: #ff2301;
-
+  --variable-color-letra-titulo-card-azul: #121149;
   --variable-font-familia:'Black Ops One';
   --variable-font-style: normal;
   --variable-font-weigth: 400;

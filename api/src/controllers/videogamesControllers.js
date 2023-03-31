@@ -26,8 +26,13 @@ const getAllVideoGamesCtrlr=async()=>{
     const dataAPI1=cleanApi(resultraw1.data.results)
     const dataAPI2=cleanApi(resultraw2.data.results)
     const dataAPI3=cleanApi(resultraw3.data.results)
-    
-    const dataDB= await Videogame.findAll()
+
+    const dataDB = await Videogame.findAll({include:{
+        model: Genre, attributes:['nombre'],
+        through:{ attributes:[]}
+     } 
+    });
+
 
     return [...dataAPI1,...dataAPI2,...dataAPI3,...dataDB]
 }
@@ -44,7 +49,10 @@ const getVideoGameByNameCtrlr= async(name)=>{
                                             through:{ attributes:[]}
                                          } 
                                         });
-    //console.log("dataBD_NAME", dataDB);
+    
+
+
+    console.log("dataBD_NAME", dataDB);
     return [...dataAPI,...dataDB]
 
 }

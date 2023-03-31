@@ -1,0 +1,106 @@
+.main_NavBar{
+    position: absolute;
+    width: 1500px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    opacity: 0.91;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    background: var(--variable-color-fondo-negro);
+}
+.main_NavBar_Menu_active{
+    position: absolute;
+    font-size: 44px;
+    line-height: 45px;
+    color: var(--variable-color-Letra-VerdeNeon);
+    display: flex;
+    text-align: center;
+    left: 5px;
+    top: 2px;
+}
+.main_NavBar_Menu1{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 640px;
+    /* background-color: blue; */
+    top: 36px;
+}
+.main_NavBar_Menu1_item{
+    position: absolute;
+    font-size: 36px;
+    line-height: 1.5em;
+    color: var(--variable-color-fondo-blanco);
+    left: 39px;
+    }
+.main_NavBar_Menu1_item:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_Menu2{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 799px;
+    top: 36px;
+    /* background-color: blue; */
+}
+.main_NavBar_Menu2_item{
+    position: absolute;
+    font-size: 36px;
+    line-height: 1.5em;
+    color: var(--variable-color-fondo-blanco);
+    left: 39px;
+}
+.main_NavBar_Menu2_item:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_Menu3{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 991px;
+    top: 36px;
+    /* background-color: blue; */
+}
+.main_NavBar_Menu3_item{
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    position: absolute;
+    font-size: 36px;
+    line-height: 1.5em;
+    color: var(--variable-color-fondo-blanco);
+    left: 39px;
+}
+.main_NavBar_Menu3_item:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_NavBar_Menu4{
+    position: absolute;
+    width: 246px;
+    height: 54px;
+    left: 1220px;
+    top: 36px;
+
+    /* background-color: blue; */
+}
+.main_NavBar_Menu4_item{
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    position: absolute;
+    font-size: 36px;
+    line-height: 1.5em;
+    color: var(--variable-color-fondo-blanco);
+    left: 39px;
+}
+.main_NavBar_Menu4_item:hover{
+    background-color:  var(--variable-color-fondo-blanco);
+    color: var(--variable-color-Letra-rojaneon);
+}

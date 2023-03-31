@@ -1,8 +1,10 @@
 import React from 'react'
-
+import  Pie from "../../components/Pie/Pie"
 const Contacto = () => {
   return (
-    <div>Contacto</div>
+    <>
+    <Pie/>
+    </>
   )
 }
  

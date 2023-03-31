@@ -1,12 +1,10 @@
 
 
 .main{
-
     position: relative;
     width: 1500px;
-    height: 3453px;
-    overflow: scroll;
-
+    height: 2808px;
+    /* overflow: scroll; */
     background: var(--variable-color-fondo-negro);
 }
 .main_parte1{
@@ -523,7 +521,7 @@
     letter-spacing: 0.2em;
     color: var(--variable-color-fondo-blanco);
 }
-.parte4{
+/* .parte4{
 
     position: absolute;
     width: 1500px;
@@ -536,7 +534,6 @@
     width: 1500px;
     height: 603.38px;
     left: 0px;
-    /* top: 2300px; */
 
     background: url(../../images/nintend\ g.jpg);
     background-position: center;
@@ -566,4 +563,5 @@
     
     border-color: var(--variable-color-fondo-verdeNeon);
 
-}
+} 
+*/

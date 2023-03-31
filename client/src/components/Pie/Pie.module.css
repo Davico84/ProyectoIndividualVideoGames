@@ -1,0 +1,83 @@
+.main{
+    position: absolute;
+    width: 1500px;
+    height: 635px;
+    left: 0px;
+    /* top: 2064px; */
+}
+.main_fondo{
+    position: absolute;
+    width: 1500px;
+    height: 569px;
+    left: 0px;
+    top: 0px;
+
+    background: url(../../images/nintend\ g.jpg);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_cuadro_superior{
+
+    position: absolute;
+    width: 1500px;
+    height: 47.93px;
+    left: 0px;
+    background: var(--variable-color-fondo-blanco);
+    opacity: 0.2;
+}
+.main_cuadro_medio{
+    position: absolute;
+    width: 1500px;
+    height: 358px;
+    left: -3px;
+    /* top: 2179px; */
+    opacity: .1;
+    background:var(--variable-color-fondo-negro)
+}
+.main_cuadro_reslte{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1078px;
+    height: 179.1px;
+    left: 422px;
+    top: 390px;
+
+    border-width: 20px 0px 0px 12px;
+    border-style: solid;
+    border-color:  var(--variable-color-fondo-blanco);
+}
+.main_linea{
+    /* Line 1 */
+
+
+    position: absolute;
+    width: 1052.01px;
+    height: 0px;
+    left: 434px;
+    top: 515px;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(-0.22deg);
+}
+.main_text_fin{
+    /* TodoVideoGames Perú ® 2023 All rights reserved */
+    position: absolute;
+    width: 436px;
+    height: 19.16px;
+    left: 729px;
+    top: 530px;
+
+    font-family: 'Black Ops One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: var(--variable-color-fondo-blanco);
+}
