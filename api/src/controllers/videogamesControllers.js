@@ -21,8 +21,8 @@ const cleanApi =(array)=>array.map(game=>{
 
 const getAllVideoGamesCtrlr=async()=>{
     const resultraw1= await axios.get(`${URL_MAIN}?key=${API_KEY}&page=1&page_size=40`)
-    const resultraw2= await axios.get(`${URL_MAIN}?key=${API_KEY}&page=2&page_size=40`)
-    const resultraw3= await axios.get(`${URL_MAIN}?key=${API_KEY}&page=3&page_size=20`)
+    const resultraw2= await axios.get(`${URL_MAIN}?key=${API_KEY}&page=5&page_size=40`)
+    const resultraw3= await axios.get(`${URL_MAIN}?key=${API_KEY}&page=6&page_size=20`)
     const dataAPI1=cleanApi(resultraw1.data.results)
     const dataAPI2=cleanApi(resultraw2.data.results)
     const dataAPI3=cleanApi(resultraw3.data.results)

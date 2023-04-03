@@ -9,16 +9,7 @@ const Landing = () => {
       <div className={styles.main}>
         <div className={styles.main_parte1}>
         <div className={styles.main_foto1} /> 
-        <div className={styles.main_NavBar}/>
-            <Link to="/home"><div className ={styles.main_NavBar_Menu1}>Home </div></Link> 
-            <Link to="/create"><div className={styles.main_NavBar_Menu2}>Create</div></Link>
-            <Link to="/Contacto"><div className={styles.main_NavBar_Menu3}>Contacto</div></Link>
-            <Link to="/Acerca"><div className={styles.main_NavBar_Menu4}>Acerca de</div></Link>
-                <div className={styles.main_NavBar_icons}>
-                  <div className={styles.main_NavBar_icon1}></div>
-                  <div className={styles.main_NavBar_icon2}></div>
-                  <div className={styles.main_NavBar_icon3}></div>
-                </div>
+       
               <div className={styles.main_fonfo_titu}></div>
               <div className={styles.main_titulo}>TODO VIDEO GAMES</div>
               <div className={styles.main_parte1_fin}></div>

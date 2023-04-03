@@ -1,11 +1,11 @@
 import './App.css';
 import { Landing, Form, Home , Contacto, Acerca} from './views';
 import NavBar from './components/NavBar/NavBar';
-import {Route,useLocation} from "react-router-dom"
-
+import {Route} from "react-router-dom"
+// import {Route,useLocaion} from "react-router-dom"
 
 function App() {
-  const location= useLocation();
+  // const location= useLocation();
   return (
     <div className="App">
       {/* {location.pathname !== "/" && <NavBar/>} */}

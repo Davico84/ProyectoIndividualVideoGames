@@ -5,7 +5,9 @@ export const SET_PREV_PAGE="SET_PREV_PAGE";
 export const SET_FIRST_PAGE="SET_FIRST_PAGE";
 export const SET_LAST_PAGE="SET_LAST_PAGE";
 export const SET_MAX_PAGE="SET_MAX_PAGE";
-
+export const UPDATE_VIDEOGAMES="UPDATE_VIDEOGAMES";
+export const GET_GENRES="GET_GENRES";
+// export const PREV_VIDEOGAMES="PREV_VIDEOGAMES";
 
 
 let estado=0
@@ -36,6 +38,34 @@ export const get_VideoGames = () => {
             })
     }
 }
+
+export const get_Genres = () => {
+    return async dispatch=>{
+        return fetch("http://localhost:3001/genres")
+            .then(response =>{
+                estado= response.status
+                return response.json()
+            })
+            .then(json =>{
+                if(estado ===400){
+                    dispatch({ type: SET_ERROR,
+                            payload: json
+
+                    })
+                }else{
+                    dispatch({ type : GET_GENRES,
+                            payload : json
+                    })
+                }
+            }).catch(error =>{
+                dispatch({ type: SET_ERROR,
+                        payload: error.message
+
+                })
+            })
+    }
+}
+
 export const setNextPage=()=>{
     return  function(dispatch){
            dispatch({type: SET_NEXT_PAGE})
@@ -62,3 +92,18 @@ export const setMaxPage=(maximo)=>{
            dispatch({type: SET_MAX_PAGE,payload:maximo})
     }
 }
+
+export const updateVideoGames=(data)=>{
+  
+    return  function(dispatch){
+           dispatch({type: UPDATE_VIDEOGAMES,payload:data})
+    }
+ }
+//  export const update_Prev_VideoGames=(data)=>{
+  
+//     return  function(dispatch){
+//            dispatch({type: PREV_VIDEOGAMES,payload:data})
+//     }
+//  }
+
+ 
