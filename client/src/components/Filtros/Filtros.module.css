@@ -56,7 +56,7 @@
     width: 100%;
     height: 50%;
     background-color: var(--variable-color-fondo-filtro);
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     position: absolute;
@@ -154,3 +154,37 @@
    .select_css option {
     font: weight 400px;;
    }
+   .chk_activador{
+        display: flex;
+        width: 257px;
+
+        font-size: 20px;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+   }
+   .boton_3d{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-size: 25px;
+    display: block;
+    padding: 4px;
+    border-radius: 8px;
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 1px auto;
+    width: 265px;
+    text-align: center;
+    transition: all .1s ease;
+    font-weight: bold;
+   }
+   boton_3d:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+   
+   

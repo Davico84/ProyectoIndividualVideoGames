@@ -28,7 +28,7 @@ const Home = () => {
   const porPagina= useSelector(state=>state.porPagina)
   const maximo=Math.ceil(videogames.length/porPagina) 
   const generos= useSelector(state=>state.genres)
-
+  const flag_prev= useSelector(state=> state.flag_prev)
   return (
     <>
       <div className={styles.main}>
@@ -39,7 +39,7 @@ const Home = () => {
 
         </div>
         <div className={styles.cuerpo_filtros}>
-           <Filtros generos={generos} videogames={videogames}/>
+           <Filtros generos={generos} videogames={videogames} flag={flag_prev}/>
         </div>
         <div className={styles.cuerpo_tarjetas}>
            <CardContainer videogames={videogames} porPagina={porPagina} pagina={pagina} error={error} />

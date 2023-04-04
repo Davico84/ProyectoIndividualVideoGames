@@ -11,6 +11,7 @@ const NoFoundCard = (props) => {
       </div>
       <div className={styles.detalle}>
                 {props.error.error}
+                <div className={styles.gif}></div>
              </div>
     </div>
   )

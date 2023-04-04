@@ -20,7 +20,7 @@ const CardContainer = (props) => {
     <div className={styles.main}>
     {   
              props.videogames.length ===0 
-                ?  <NoFoundCard error={{error:"No se encontraron Resultados"}}/>
+                ?  <NoFoundCard error={{error:"Cargando data espere por favor..."}}/>
                 : props.videogames.slice(
                         (props.pagina-1)*props.porPagina,
                         (props.pagina-1)*props.porPagina+props.porPagina)

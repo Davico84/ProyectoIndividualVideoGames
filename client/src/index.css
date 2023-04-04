@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   font-family: 'Black Ops One', cursive;
-  --variable-color-fondo-filtro: aquamarine;
+  --variable-color-fondo-filtro:#FFFFFF;
   --variable-color-fondo-negro : #000000  ;
   --variable-color-fondo-blanco : #FFFFFF;
   --variable-color-fondo-crema: #FF8800;

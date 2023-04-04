@@ -1,9 +1,10 @@
 import { GET_VIDEOGAMES, SET_ERROR,SET_NEXT_PAGE ,SET_PREV_PAGE,SET_FIRST_PAGE,
-         SET_LAST_PAGE,SET_MAX_PAGE ,UPDATE_VIDEOGAMES, GET_GENRES} from "./action";
+         SET_LAST_PAGE,SET_MAX_PAGE ,UPDATE_VIDEOGAMES, GET_GENRES,SET_PREV_VIDEOGAMES,ACTIVE_FLAG_PREV} from "./action";
 
 const initialState={
     videoGames:[],
-    // videoGames_Prev:[],
+    videoGames_Prev:[],
+    flag_prev:false,
     videGame:[],
     pagina:1,
     porPagina:15,
@@ -34,8 +35,10 @@ const rootReducer=(state =initialState, action) =>{
             return{...state,maximo:action.payload}   
         case UPDATE_VIDEOGAMES:
             return {...state,videoGames:action.payload}
-        // case PREV_VIDEOGAMES:
-        //     return {...state,videoGames_Prev:action.payload}    
+        case SET_PREV_VIDEOGAMES:
+            return {...state,videoGames_Prev:action.payload}    
+        case ACTIVE_FLAG_PREV:
+            return {...state,flag_prev:true}  
         default:
          
         return{...state}

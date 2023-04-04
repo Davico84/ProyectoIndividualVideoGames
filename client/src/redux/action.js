@@ -7,7 +7,8 @@ export const SET_LAST_PAGE="SET_LAST_PAGE";
 export const SET_MAX_PAGE="SET_MAX_PAGE";
 export const UPDATE_VIDEOGAMES="UPDATE_VIDEOGAMES";
 export const GET_GENRES="GET_GENRES";
-// export const PREV_VIDEOGAMES="PREV_VIDEOGAMES";
+export const ACTIVE_FLAG_PREV="ACTIVE_FLAG_PREV";
+export const SET_PREV_VIDEOGAMES="SET_PREV_VIDEOGAMES";
 
 
 let estado=0
@@ -92,18 +93,21 @@ export const setMaxPage=(maximo)=>{
            dispatch({type: SET_MAX_PAGE,payload:maximo})
     }
 }
-
 export const updateVideoGames=(data)=>{
   
     return  function(dispatch){
            dispatch({type: UPDATE_VIDEOGAMES,payload:data})
     }
  }
-//  export const update_Prev_VideoGames=(data)=>{
+ export const set_Prev_VideoGames=(data)=>{
   
-//     return  function(dispatch){
-//            dispatch({type: PREV_VIDEOGAMES,payload:data})
-//     }
-//  }
-
+    return  function(dispatch){
+           dispatch({type: SET_PREV_VIDEOGAMES,payload:data})
+    }
+ }
+ export const set_flag_PreVG=()=>{
+    return  function(dispatch){
+           dispatch({type: ACTIVE_FLAG_PREV})
+    }
+}
  

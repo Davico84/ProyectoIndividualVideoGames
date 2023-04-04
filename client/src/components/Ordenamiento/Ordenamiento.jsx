@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import {updateVideoGames,setNextPage,setPrevPage} from "../../redux/action"; 
 
 const Ordenamiento = (props) => {
-
+    const dispatch = useDispatch();
 
     // const [prev_videogames,setprev_videogames]=useState({
     //     prev_videoG:[],
     // })
 
-    const dispatch = useDispatch();
+    
         
     const sortByButton=(property)=>{
         
@@ -57,7 +57,7 @@ const Ordenamiento = (props) => {
         
         const result=sortByButton(property) 
         
-        console.log(`result ordenado x ${property}`,result)
+        // console.log(`result ordenado x ${property}`,result)
         dispatch(updateVideoGames(result));
         dispatch(setNextPage());
         dispatch(setPrevPage());
