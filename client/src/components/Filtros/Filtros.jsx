@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./Filtros.module.css";
 import { useState } from 'react';
-import {updateVideoGames,setNextPage,setPrevPage,set_Prev_VideoGames,set_flag_PreVG,setFirstPage} from "../../redux/action"; 
+import {updateVideoGames,set_Prev_VideoGames,set_flag_PreVG,setFirstPage} from "../../redux/action"; 
 import { useDispatch ,useSelector} from 'react-redux';
 import { useRef } from 'react';
 
@@ -58,12 +58,21 @@ const Filtros = (props) => {
     const cleanFilterHandler=()=>{
 
         if (props.flag){
+
             dispatch(updateVideoGames(videogamesPrev));
-            dispatch(setNextPage());
-            dispatch(setPrevPage()); 
-        }else 
-        alert("NO hay filtros por Limpiar");
-            
+            for (const property in checkedState) {
+                console.log(`${property}: ${checkedState[property]}`);
+                // setCheckedState({...checkedState,[property]:false})
+              
+                document.getElementById([property]).checked = false;
+              }
+
+            setCheckedState([])
+            datafiltrada.current=[]
+            dispatch(setFirstPage());
+        }else {
+            alert("NO hay filtros por Limpiar");
+        }
     }
     const changeChkHandler=(event)=>{
 
@@ -73,12 +82,9 @@ const Filtros = (props) => {
         if(props.flag===false ) {
             dispatch(set_Prev_VideoGames(props.videogames))
             dispatch(set_flag_PreVG())
-            console.log("se disparo una vez");
+            // console.log("se disparo una vez");
         }
 
-        if (property!=="chk_activador") {
-            setCheckedState({...checkedState,[property]:value})
-        }
         setCheckedState({...checkedState,[property]:value})
         filtrado(value, property)
 
@@ -112,10 +118,7 @@ const Filtros = (props) => {
             dispatch(set_flag_PreVG())
             console.log("se disparo una vez");
         }
-        const property =event.target.value;
-        // setprev_videogames({...prev_videogames,prev_videoG: props.videogames })
-        // //if(property!=="optDef")  
-        
+        const property =event.target.value;   
         const result=sortByButton(property) 
         
         dispatch(updateVideoGames(result));
