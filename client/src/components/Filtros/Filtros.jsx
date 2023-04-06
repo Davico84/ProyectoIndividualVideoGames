@@ -3,41 +3,56 @@ import styles from "./Filtros.module.css";
 import { useState } from 'react';
 import {updateVideoGames,setNextPage,setPrevPage,set_Prev_VideoGames,set_flag_PreVG,setFirstPage} from "../../redux/action"; 
 import { useDispatch ,useSelector} from 'react-redux';
+import { useRef } from 'react';
 
 
 const Filtros = (props) => {
     const videogamesPrev= useSelector(state=>state.videoGames_Prev)
     const dispatch = useDispatch();
+    const datafiltrada= useRef([]);
 
-    const [datosFiltrados,setdatosFiltrados]=useState([]);
+    // const [datosFiltrados,setdatosFiltrados]=useState([]);
     const [checkedState, setCheckedState] = useState(
         new Array(props.generos.length).fill(false)
     );
+
+
+    const limpiaRepetidos=(videogames)=>{
+        
+          let videogamesMap = videogames.map(item=>{
+              return [item.id,item]
+          });
+          var videogamesMapArr = new Map(videogamesMap); // Pares de clave y valor
+          
+          let unicos = [...videogamesMapArr.values()]; // Conversión a un array
+        
+          return unicos
+    }
     const filtrado =(value,property) =>{
         if(value){
-            console.log("FLAG:", props.flag);
             const data = (props.flag) ? videogamesPrev : props.videogames
             const resulta2= data.filter(videogames =>{
                 return videogames.create===false? videogames.genres.some(genre=> genre===property) 
                                                 : videogames.genres.some(genre=> genre.nombre===property)
             })
-            setdatosFiltrados([...datosFiltrados, ...resulta2])  
-            console.log("REsultados del filtro", resulta2);
-            dispatch(updateVideoGames(resulta2));
-            dispatch(setNextPage());
-            dispatch(setPrevPage());          
-            // console.log("filtro SOME",resulta2);  
-        }else{
-            const resulta2= datosFiltrados.filter(videogames =>{
-                return videogames.create===false? videogames.genres.some(genre=> genre!==property) 
-                                                : videogames.genres.some(genre=> genre.nombre!==property)
-            })
-            setdatosFiltrados([...resulta2])
-            // console.log("datosFiltrados FALSE",resulta2); 
 
-            dispatch(updateVideoGames(resulta2));
-            dispatch(setNextPage());
-            dispatch(setPrevPage()); 
+            datafiltrada.current=([...datafiltrada.current,...resulta2]);
+            datafiltrada.current=limpiaRepetidos(datafiltrada.current);
+            dispatch(updateVideoGames(datafiltrada.current));
+            dispatch(setFirstPage());
+        }else{
+            
+            console.log("data filtra REF ", datafiltrada.current);
+
+            const resulta2Prev= datafiltrada.current.filter(videogames =>{
+                return videogames.create===false? videogames.genres.some(genre=> genre===property) 
+                                                : videogames.genres.some(genre=> genre.nombre===property)
+            })
+            const resulta2= datafiltrada.current.filter(el => !resulta2Prev.includes(el));
+            
+            datafiltrada.current=([...resulta2]);           
+            dispatch(updateVideoGames(datafiltrada.current));
+            dispatch(setFirstPage());
         }
     } 
     const cleanFilterHandler=()=>{
@@ -103,12 +118,9 @@ const Filtros = (props) => {
         
         const result=sortByButton(property) 
         
-        // console.log(`result ordenado x ${property}`,result)
         dispatch(updateVideoGames(result));
         dispatch(setFirstPage());
-        // dispatch(setPrevPage());
     }
-
 
     return (
 

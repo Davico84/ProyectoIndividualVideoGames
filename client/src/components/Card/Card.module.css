@@ -108,7 +108,7 @@
     left: 56px;
     top: 294px;
     border-radius: 20px;
-    background: #FF5419;
+    background: var(--variable-color-fondo-naranja);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -123,4 +123,6 @@
     /* align-items: flex-start; */
     /* text-align: center; */
     color: var(--variable-color-fondo-blanco);
+    width: 130px;
+    height: 25px;
 }

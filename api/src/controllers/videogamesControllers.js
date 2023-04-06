@@ -52,7 +52,7 @@ const getVideoGameByNameCtrlr= async(name)=>{
     
 
 
-    console.log("dataBD_NAME", dataDB);
+    // console.log("dataBD_NAME", dataDB);
     return [...dataAPI,...dataDB]
 
 }
@@ -79,7 +79,7 @@ const getVideoGameByIdCtrlr=async(id,source)=>{
         
 }
 const postVideoGameCtrlr =async (nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs)=>{
-    console.log("arreglo Generos",Arrgenrs);
+    // console.log("arreglo Generos",Arrgenrs);
     const genrsDB= await Genre.findAll();
     if(genrsDB.length===0) return {error:"No existen generos registros en la BD."} 
     

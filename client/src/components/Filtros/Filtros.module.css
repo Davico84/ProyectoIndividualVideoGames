@@ -167,24 +167,26 @@
     position: relative;
     color: #fff;
     text-decoration: none;
-    background-color: rgba(219,87,5,1);
-    font-size: 25px;
+    background-color: var(--variable-color-fondo-naranja);
+    font-size: 23px;
     display: block;
     padding: 4px;
     border-radius: 8px;
-    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px var(--variable-color-Letra-rojaneon), 0px 9px 25px rgba(0,0,0,.7);
     margin: 1px auto;
     width: 265px;
     text-align: center;
     transition: all .1s ease;
     font-weight: bold;
+    font-family: var(--variable-font-familia);
    }
    boton_3d:active {
-    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -webkit-box-shadow: 0px 3px 0px var(--variable-color-Letra-rojaneon), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px var(--variable-color-Letra-rojaneon), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px var(--variable-color-Letra-rojaneon), 0px 3px 6px rgba(0,0,0,.9);
     position: relative;
     top: 6px;
 }
+   
    
    
