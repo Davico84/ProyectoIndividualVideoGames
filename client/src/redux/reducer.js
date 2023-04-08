@@ -1,11 +1,12 @@
 import { GET_VIDEOGAMES, SET_ERROR,SET_NEXT_PAGE ,SET_PREV_PAGE,SET_FIRST_PAGE,
-         SET_LAST_PAGE,SET_MAX_PAGE ,UPDATE_VIDEOGAMES, GET_GENRES,SET_PREV_VIDEOGAMES,ACTIVE_FLAG_PREV} from "./action";
+         SET_LAST_PAGE,SET_MAX_PAGE ,UPDATE_VIDEOGAMES, GET_GENRES,SET_PREV_VIDEOGAMES,
+         GET_VIDEOGAME_BY_ID,ACTIVE_FLAG_PREV} from "./action";
 
 const initialState={
     videoGames:[],
     videoGames_Prev:[],
     flag_prev:false,
-    videGame:[],
+    videoGame:[],
     pagina:1,
     porPagina:15,
     input:1,
@@ -19,6 +20,9 @@ const rootReducer=(state =initialState, action) =>{
     switch (action.type) {
         case GET_VIDEOGAMES:{
             return {...state,videoGames:action.payload}}
+        case GET_VIDEOGAME_BY_ID:{
+            // console.log("esto entro a payload",action.payload)
+            return {...state,videoGame:action.payload}}
         case GET_GENRES:{
             return {...state,genres:action.payload}}
         case SET_ERROR:

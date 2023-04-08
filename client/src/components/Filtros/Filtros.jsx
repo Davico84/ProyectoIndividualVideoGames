@@ -10,7 +10,7 @@ const Filtros = (props) => {
     const videogamesPrev= useSelector(state=>state.videoGames_Prev)
     const dispatch = useDispatch();
     const datafiltrada= useRef([]);
-
+    const flag_filter_source= useRef(false);
     // const [datosFiltrados,setdatosFiltrados]=useState([]);
     const [checkedState, setCheckedState] = useState(
         new Array(props.generos.length).fill(false)
@@ -18,7 +18,7 @@ const Filtros = (props) => {
 
 
     const limpiaRepetidos=(videogames)=>{
-        
+            console.log("lo q llega a limpia repetidos", videogames)
           let videogamesMap = videogames.map(item=>{
               return [item.id,item]
           });
@@ -30,14 +30,16 @@ const Filtros = (props) => {
     }
     const filtrado =(value,property) =>{
         if(value){
-            const data = (props.flag) ? videogamesPrev : props.videogames
+            const data = (props.flag && flag_filter_source.current=== false) ? videogamesPrev : props.videogames
+            console.log("que data estoy trabajando,",data);
             const resulta2= data.filter(videogames =>{
                 return videogames.create===false? videogames.genres.some(genre=> genre===property) 
                                                 : videogames.genres.some(genre=> genre.nombre===property)
             })
-
+            console.log("que data esta RESULTA2,",resulta2);
             datafiltrada.current=([...datafiltrada.current,...resulta2]);
             datafiltrada.current=limpiaRepetidos(datafiltrada.current);
+            console.log("que data esta filtrando,",datafiltrada.current);
             dispatch(updateVideoGames(datafiltrada.current));
             dispatch(setFirstPage());
         }else{
@@ -49,7 +51,13 @@ const Filtros = (props) => {
                                                 : videogames.genres.some(genre=> genre.nombre===property)
             })
             const resulta2= datafiltrada.current.filter(el => !resulta2Prev.includes(el));
-            
+           
+            if (resulta2.length===0) {
+                datafiltrada.current=([]);  
+                dispatch(updateVideoGames(videogamesPrev));  
+                dispatch(setFirstPage());
+                return
+            }
             datafiltrada.current=([...resulta2]);           
             dispatch(updateVideoGames(datafiltrada.current));
             dispatch(setFirstPage());
@@ -62,11 +70,8 @@ const Filtros = (props) => {
             dispatch(updateVideoGames(videogamesPrev));
             for (const property in checkedState) {
                 console.log(`${property}: ${checkedState[property]}`);
-                // setCheckedState({...checkedState,[property]:false})
-              
                 document.getElementById([property]).checked = false;
-              }
-
+            }
             setCheckedState([])
             datafiltrada.current=[]
             dispatch(setFirstPage());
@@ -93,22 +98,26 @@ const Filtros = (props) => {
     const sortByButton=(property)=>{
         
         let result=[]
-        const data = (props.flag) ? videogamesPrev : props.videogames
+        // const data = (props.flag) ? videogamesPrev : props.videogames
+        const data = props.videogames
         switch (property) {
             case "API":
                 result = data.filter((el=> el.create===false));
+                flag_filter_source.current=true;
                 break;
             case "BD":
                 result = data.filter((el=> el.create===true));
+                flag_filter_source.current=true;
                 break;
             case "DEF":
                 result= videogamesPrev
+                flag_filter_source.current=false;
                 break;
             default:
                 console.log("entre defaut");
                 break;
         }
-        console.log("filtro SORUCE", result);
+        // console.log("filtro SORUCE", result);
         return result;
     }
 
@@ -116,11 +125,11 @@ const Filtros = (props) => {
         if(props.flag===false ) {
             dispatch(set_Prev_VideoGames(props.videogames))
             dispatch(set_flag_PreVG())
-            console.log("se disparo una vez");
+            
         }
         const property =event.target.value;   
         const result=sortByButton(property) 
-        
+        // datafiltrada.current=([...result]);    
         dispatch(updateVideoGames(result));
         dispatch(setFirstPage());
     }

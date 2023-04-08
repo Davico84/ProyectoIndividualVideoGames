@@ -1,0 +1,176 @@
+.main_NavBar{
+   
+    width: 1500px;
+    height: 117px;
+    left: 0px;
+    top: 0px;
+    background: var(--variable-color-fondo-negro);
+    opacity: 0.51;
+    z-index: 1;
+    position: absolute;
+}
+
+.main_NavBar_Menu1{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left:600px;
+    top: 36px;
+    /* background-color: blue; */
+    z-index: 2;
+}
+
+.main_NavBar_Menu2{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 799px;
+    top: 36px;
+    /* background-color: blue; */
+    z-index: 2;
+}
+
+.main_NavBar_Menu3{
+    position: absolute;
+    width: 180px;
+    height: 54px;
+    left: 991px;
+    top: 36px;
+    /* background-color: blue; */
+    z-index: 2;
+}
+
+.main_NavBar_Menu4{
+    position: absolute;
+    width: 246px;
+    height: 54px;
+    left: 1220px;
+    top: 36px;
+    z-index: 2;
+    /* background-color: blue; */
+}
+
+.main_menu_efecto_item {
+    font-family:  var(--variable-font-familia);
+    font-style: var(--variable-font-style);
+    font-weight: var(--variable-font-weigth);
+    position: absolute;
+    font-size: 36px;
+    line-height: 1.5em;
+    color: var(--variable-color-fondo-blanco);
+    left: 39px;
+    border-radius: 3px; /* redondear bordes */
+    /* position: relative; */
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+.main_menu_efecto_item:hover {
+    color:var(--variable-color-Letra-rojaneon);
+    background-color:  var(--variable-color-fondo-blanco);
+}
+.main_menu_efecto_item::after {
+    content: "";
+    background: var(--variable-color-fondo-verdeNeon);/* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+}
+.main_menu_efecto_item:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
+ }
+
+
+.main_NavBar_Menu_active{
+    position: absolute;
+    font-size: 44px;
+    line-height: 45px;
+    color: var(--variable-color-Letra-VerdeNeon);
+    display: flex;
+    text-align: center;
+    left: 5px;
+    top: 2px;
+}
+
+
+.main_NavBar_icons{
+    position: absolute;
+    width: 248px;
+    height: 97.92px;
+    /* background: aqua; */
+    left: 30px;
+    top: 17px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    z-index: 2;
+}
+.main_NavBar_icon1{
+
+    width: 70px;
+    height: 75px;
+    background:  var(--variable-color-fondo-blanco);
+    
+    background: url(../../images/Facebook.png) ;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main_NavBar_icon1:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_NavBar_icon2{
+
+    width: 70px;
+    height: 75px;
+
+    background:  var(--variable-color-fondo-blanco);
+    
+    background: url(../../images/Instagram.png) ;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main_NavBar_icon2:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_NavBar_icon3{
+
+    width: 69px;
+    height: 57px;
+
+    background:  var(--variable-color-fondo-blanco);
+    background: url(../../images/Vectortwt.png) ;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main_NavBar_icon3:hover{
+    width: 75px;
+    height: 65px;
+}
+.main_fonfo_titu{
+    /* fondo titulo */
+    position: absolute;
+    width: 557px;
+    height: 503px;
+    left: 0px;
+    top: 202px;
+
+    background: var(--variable-color-fondo-neon);
+    opacity: 0.25;
+    border-radius: 0px 38px 38px 0px;
+}

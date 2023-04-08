@@ -10,7 +10,7 @@ const CardContainer = (props) => {
       console.log("CAPTURANDO ERROR SERVIDOR");
       return(
           <div className={styles.main_error}>
-              <NoFoundCard error={props.error}/> 
+               <NoFoundCard error={props.error}/> 
           </div>
       ) 
 
@@ -20,7 +20,7 @@ const CardContainer = (props) => {
     <div className={styles.main}>
     {   
              props.videogames.length ===0 
-                ?  <NoFoundCard error={{error:"Cargando data espere por favor..."}}/>
+                ?  <NoFoundCard error={{error:"No se encontraron Registros"}}/>
                 : props.videogames.slice(
                         (props.pagina-1)*props.porPagina,
                         (props.pagina-1)*props.porPagina+props.porPagina)

@@ -38,6 +38,10 @@ const Home = () => {
           <div className={styles.main_titulo_texto2}> Vista resumida de todos los juegos en grupos de 15 por pagina.</div>
 
         </div>
+        <div className={styles.cuerpo_navegacion}>
+            <Paginado pagina={pagina} maximo={maximo} videogames={videogames}/>
+        </div>
+
         <div className={styles.cuerpo_filtros}>
            <Filtros generos={generos} videogames={videogames} flag={flag_prev}/>
         </div>
@@ -47,9 +51,6 @@ const Home = () => {
         <div className={styles.cuerpo_ordenamiento}>
             <Ordenamiento videogames={videogames}/>
         </div> 
-        <div className={styles.cuerpo_navegacion}>
-            <Paginado pagina={pagina} maximo={maximo} videogames={videogames}/>
-        </div>
         
       
 

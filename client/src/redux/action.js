@@ -9,7 +9,7 @@ export const UPDATE_VIDEOGAMES="UPDATE_VIDEOGAMES";
 export const GET_GENRES="GET_GENRES";
 export const ACTIVE_FLAG_PREV="ACTIVE_FLAG_PREV";
 export const SET_PREV_VIDEOGAMES="SET_PREV_VIDEOGAMES";
-
+export const GET_VIDEOGAME_BY_ID="GET_VIDEOGAME_BY_ID";
 
 let estado=0
 export const get_VideoGames = () => {
@@ -35,6 +35,32 @@ export const get_VideoGames = () => {
                 dispatch({ type: SET_ERROR,
                         payload: error.message
 
+                })
+            })
+    }
+}
+
+export const get_VideoGame_by_ID = (ID) => {
+    
+    return async dispatch=>{
+        return fetch(`http://localhost:3001/videogames/${ID}`)
+            .then(response =>{
+                estado= response.status
+                return response.json()
+            })
+            .then(json =>{
+                if(estado ===400){
+                    dispatch({ type: SET_ERROR,
+                            payload: json
+                    })
+                }else{
+                    dispatch({ type : GET_VIDEOGAME_BY_ID,
+                            payload : json
+                    })
+                }
+            }).catch(error =>{
+                dispatch({ type: SET_ERROR,
+                        payload: error.message
                 })
             })
     }

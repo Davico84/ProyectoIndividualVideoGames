@@ -50,10 +50,10 @@
 .gif{
     width: 900px;
     height: 135px;
-    background: url(../../images/cargando-loading-039.gif);
+    /* background: url(../../images/cargando-loading-039.gif);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     display: flex;
     align-items: center;
     justify-content: center;

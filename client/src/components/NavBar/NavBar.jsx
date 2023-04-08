@@ -39,7 +39,7 @@ const NavBar = () => {
         </div>
 
             <div className={styles.main_NavBar}/>
-            <div className={styles.main_NavBar_icons}>
+               <div className={styles.main_NavBar_icons}>
               <div className={styles.main_NavBar_icon1}></div>
               <div className={styles.main_NavBar_icon2}></div>
               <div className={styles.main_NavBar_icon3}></div>
