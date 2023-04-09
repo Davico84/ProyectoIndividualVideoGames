@@ -10,6 +10,7 @@ export const GET_GENRES="GET_GENRES";
 export const ACTIVE_FLAG_PREV="ACTIVE_FLAG_PREV";
 export const SET_PREV_VIDEOGAMES="SET_PREV_VIDEOGAMES";
 export const GET_VIDEOGAME_BY_ID="GET_VIDEOGAME_BY_ID";
+export const DESTROY_VIDEOGAME="DESTROY_VIDEOGAME";
 
 let estado=0
 export const get_VideoGames = () => {
@@ -136,4 +137,9 @@ export const updateVideoGames=(data)=>{
            dispatch({type: ACTIVE_FLAG_PREV})
     }
 }
- 
+export const destroyVideogame=()=>{
+  
+    return  function(dispatch){
+           dispatch({type: DESTROY_VIDEOGAME})
+    }
+ }

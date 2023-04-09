@@ -1,20 +1,23 @@
 import { useEffect } from "react"; 
+import { Link } from "react-router-dom"
 import Pie from "../../components/Pie/Pie"
 import { useLocation } from 'react-router-dom'
-import {get_VideoGame_by_ID} from "../../redux/action"
+import {get_VideoGame_by_ID,destroyVideogame} from "../../redux/action"
 import {useDispatch,useSelector} from "react-redux"
 import styles from "./Detail.module.css"
 import cargando from "../../images/cargando-loading-039.gif"
+
 const Detail = () => {
     const location = useLocation()
     const { idCard } = location.state
-    const disptach = useDispatch();
+    const dispatch = useDispatch();
     
     useEffect( ()=>{
-        // console.log("se disparo al crear");
-        disptach(get_VideoGame_by_ID(idCard));
+        console.log("se disparo al cerrar??");
+        dispatch(get_VideoGame_by_ID(idCard));
         
-    },[disptach,idCard])//array de deoendencias
+        dispatch( destroyVideogame())
+    },[dispatch,idCard])//array de deoendencias
     
     
     const videogame=  useSelector(state=>state.videoGame)
@@ -23,7 +26,22 @@ const Detail = () => {
     //                                     :Math.round(videogame[0].rating).length
     const formateo= videogame.length ===0  
                     ?  "sin datos" 
-                    : videogame[0].descripcion    
+                    : videogame[0].descripcion  
+    function estrellitas(index) {
+        // console.log("entro una estreilla");
+        return <div key={index} className={styles.parte_1_rating_estrella}/>
+    }  
+   
+    let starArr = [];
+    let starcount=videogame.length ===0  
+             ?  "undefined" 
+             : videogame[0].rating
+    starcount=Math.round(starcount)
+ 
+    for (let index = 0; index < starcount; index++) {
+        starArr.push(estrellitas(index))
+      }              
+
   return (
     <>
     
@@ -46,8 +64,8 @@ const Detail = () => {
                     <div className={styles.parte_1_plataformas_titulo}>PLATAFORMAS</div>
                     <div className={styles.parte_1_plataformas_texto}>
                         {videogame.length ===0  ?  "Cargando Datos" :videogame[0].plataformas.map(el=>{
-                            return  <span key= {el.id}> {el} 
-                                        <div key= {el.id} className={styles.parte_1_plataformas_linea}></div>
+                            return  <span key= {el.index+el}> {el} 
+                                        <div  className={styles.parte_1_plataformas_linea}></div>
                                     </span>})}
                     </div>
                 </div>
@@ -56,13 +74,13 @@ const Detail = () => {
                     <div className={styles.parte_1_Generos_texto}>
                         {videogame.length ===0  ?  "Cargando Datos" 
                                                 : (videogame[0].create===false ) ? videogame[0].genres.map(el=>{
-                                                     return  <span key= {el.id}> {el} 
-                                                        <div key= {el.id} className={styles.parte_1_plataformas_linea}></div>
+                                                     return  <span key= {el.id+el}> {el} 
+                                                        <div  className={styles.parte_1_plataformas_linea}></div>
                                                     </span>})
                                                                               :videogame[0].genres.map(el=>{
-                                                         return  <span key= {el.id}> {el.nombre} 
-                                                            <div  key= {el.id}className={styles.parte_1_plataformas_linea}></div>
-                                                        </span>})
+                                                    return  <span key= {el.id+el}> {el.nombre} 
+                                                         <div  className={styles.parte_1_plataformas_linea}></div>
+                                                    </span>})
                                                     }
                     </div>
                 </div>
@@ -75,16 +93,24 @@ const Detail = () => {
 
                 <div  className={styles.parte_1_rating}>
                     <div className={styles.parte_1_rating_titulo}> Rating</div>
-                    <div className={styles.parte_1_rating_estrellas}>
-                     {videogame.length ===0  ?  "Cargando Datos" : videogame[0].rating}
-                    </div>
+                    <div className={styles.parte_1_rating_contenedor}>
+                        <div className={styles.parte_1_rating_texto}>
+                            {videogame.length ===0  ?  "Cargando Datos" : videogame[0].rating}
+                        </div>
+                        <div  className={styles.parte_1_rating_star}>
+                            {starArr}
+
+                        </div>
+                    </div>          
+                </div>
+
+                <div  className={styles.parte_1_cuadro_boton}>
                     
-                    {/* <div className={styles.parte1_feclan_fecha}>
-                            {videogame.length ===0  ?  "Cargando Datos" 
-                                                    :  
-                                                    
-                            }
-                    </div> */}
+                    <div className={styles.parte_1_boton_regresar}>
+                            <div className={styles.main_parte1_boton}>
+                        <Link to="/home"><div className={styles.ov_btn_slide_right}>Regresar</div></Link>
+                         </div>
+                    </div>          
                 </div>
 
             </div>

@@ -2,7 +2,7 @@
 
     position: relative;
     width: 1500px;
-    height: 2130px;
+    height: 2220px;
     background: var(--variable-color-fondo-negro);
 }
 /* .main_fondo{
@@ -283,18 +283,18 @@
     justify-content: space-around;
 }
 .parte_1_rating{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
-
     position: absolute;
     width: 355px;
-    height: 169px;
+    height: 254px;
     left: 1047px;
-    top: 885px;
+    top: 764px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.41);
 }
 .parte_1_rating_titulo{
     /* Rating */
@@ -313,7 +313,7 @@
     align-items: center;
     text-align: center;
 
-    color: #FFFFFF;
+    color: var(--variable-color-fondo-crema);
 
 
     /* Inside auto layout */
@@ -322,47 +322,84 @@
     order: 0;
     flex-grow: 0;
 }
-.parte_1_rating_estrellas{
-
+.parte_1_rating_contenedor{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 6px;
+    grid-gap: 10px;
     gap: 10px;
-
     width: 335px;
-    height: 74px;
-
-    background: rgba(0, 0, 0, 0.61);
+    height: 120px;
+    /* background: rgba(0, 0, 0, 0.61); */
     border-radius: 10px;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
-
+    display: flex;
+    text-align: center;
+    color: var(--variable-color-Letra-rojaneon);
+    align-items: center;
+}
+.parte_1_rating_texto {
+    font-size: 60px;
+    line-height: 20px;
+    display: flex;
+    color: var(--variable-color-Letra-rojaneon);
+    
+}
+.parte_1_rating_star {
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
     font-size: 60px;
-    line-height: 75px;
-    /* identical to box height */
-
+    line-height: 10px;
     display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: var(--variable-color-Letra-rojaneon);
-
 }
 
+.parte_1_rating_estrella{
+    width: 45px;
+    height: 45px;
+    background: url(../../images/estreallas.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parte_1_cuadro_boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    width: 355px;
+    height: 200px;
+    left: -49px;
+    top: 500px;
+}
+.parte_1_boton_regresar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 6px;
+    grid-gap: 10px;
+    gap: 10px;
+    width: 250px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    display: flex;
+    text-align: center;
+    color: var(--variable-color-Letra-rojaneon);
+    align-items: center;
+}
 .main_parte_2{
-    /* parte2 */
     position: absolute;
     width: 1500px;
-    height: 750.61px;
+    height: 841px;
     /* left: 0px; */
     top: 1378.39px;
 
@@ -373,7 +410,7 @@
 
     position: absolute;
     width: 1500px;
-    height: 751px;
+    height: 841px;
     left: 0px;
     top: 0px;
 
@@ -385,7 +422,7 @@
     position: absolute;
     display: flex;
     width: 1497px;
-    height: 576px;
+    height: 661px;
     left: 5px;
     top: 95px;
     background: #FFFFFF;
@@ -419,18 +456,59 @@
 }
 .main_parte_2_texto{
     position: relative;
-    width: 1317px;
-    height: 512px;
+    width: 1420px;
+    height: 641px;
     /* left: 94px; */
     /* top: 127px; */
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 25px;
+    line-height: 20px;
     display: flex;
-    align-items: center;
     text-align: justify;
     letter-spacing: 10px;
     color: #000000;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    /* align-items: center; */
+    overflow:hidden;
+    justify-content: space-between;
 }
+.ov_btn_slide_right {
+    background: var(--variable-color-fondo-verdeNeon); /* color de fondo */
+    color:  var(--variable-color-fondo-negro);  /* color de fuente */
+    border: 2px solid var(--variable-color-fondo-negro); /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 38px;
+  }
+  .ov_btn_slide_right:hover {
+    color: var(--variable-color-fondo-blanco); /* color de fuente hover */
+  }
+  .ov_btn_slide_right::after {
+    content: "";
+    background: var(--variable-color-fondo-crema); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov_btn_slide_right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
