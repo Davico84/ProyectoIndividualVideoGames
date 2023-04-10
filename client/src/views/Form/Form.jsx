@@ -172,7 +172,7 @@ const changeChkHandler=(event)=>{
               <div  className={styles.mainchks}>
                       <div className={styles.mainchks_opt}>
                           {generos.map(( el,index) =>
-                          {   return <>
+                          {   return <div className={styles.div_options}>
                                         <input 
                                             onClick={changeChkHandler} 
                                             className={styles.chkbox} 
@@ -183,16 +183,11 @@ const changeChkHandler=(event)=>{
                                             name={el.nombre} 
                                             value ={el.nombre} 
                                         />  
-                                        return  <label key={index} htmlFor={el.nombre} >{el.nombre}</  label>
+                                        <label key={index} htmlFor={el.nombre} >{el.nombre}</  label>
                           
-                                    </>
+                                        </div>
                           } )}
                       </div>
-                      {/* <div className={styles.mainchks_text}>
-                      {generos.map(( el,index) => */}
-                      {/* //     {                */}
-                      {/* //     } )}
-                      // </div> */}
                   </div>
                     <div className={styles.main_form_txt_linea}/>
             </div>
