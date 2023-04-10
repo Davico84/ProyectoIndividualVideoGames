@@ -14,7 +14,7 @@ const Detail = () => {
     const dispatch = useDispatch();
     
     useEffect( ()=>{
-        console.log("se disparo alcerrar??");
+        // console.log("se disparo alcerrar??");
         dispatch(get_VideoGame_by_ID(idCard));
         dispatch( destroyVideogame([]))
 
