@@ -4,6 +4,7 @@ import { get_Genres } from '../../redux/action';
 import styles from "./Form.module.css"
 import {useState}from "react"
 import { useDispatch,useSelector } from "react-redux";
+import axios from "axios"
 
 const Form = () => {
 
@@ -19,8 +20,10 @@ const Form = () => {
 
 
   const generos= useSelector(state=>state.genres)
-  
 
+  const [checkedState, setCheckedState] = useState(
+    new Array(generos.length).fill(false)
+);
   const [form,setForm]= useState({
     nombre:"",
     image:"",
@@ -28,7 +31,7 @@ const Form = () => {
     feclan:"2023-04-10",
     plataformas:"",
     descripcion:"",
-    TiposdeDieta:[]
+    Arrgenrs:[]
   })
   const [errors,setErrors]= useState({
     nombre:"",
@@ -37,11 +40,8 @@ const Form = () => {
     feclan:"2023-04-10",
     plataformas:"",
     descripcion:"",
-    TiposdeDieta:[]
+    Arrgenrs:checkedState
   })
-  const [checkedState, setCheckedState] = useState(
-    new Array(generos.length).fill(false)
-);
   const changeHandler=(event)=>{
     const property =event.target.name;
     const value= event.target.value
@@ -51,19 +51,27 @@ const Form = () => {
   const submitHandler =(event)=>{
     // if(form.nombre ==="" ||form.resumen ==="" ) return alert("debe registrar un nombre y resumen valido para continuar")
     // form.TiposdeDieta=llenarDietas()
-    // event.preventDefault();
-    // // console.log("que manda form", form)
-    // axios.post("http://localhost:3001/recipes/",form)
-    // .then(res=>{
-    //     alert("El registro fue Añadido")
-    //     limpiarForm(form)})
-    // .catch(err=>alert("Error:",err))
+    event.preventDefault();
+    console.log("que manda form", form)
+    axios.post("http://localhost:3001/videogames/",form)
+    .then(res=>{
+        alert("El registro fue Añadido")
+        limpiarForm(form)})
+    .catch(err=>alert("Error:",err))
+}
+
+const limpiarForm=(estado)=>{
+  for (const property in estado) {
+      // console.log("propiedad",[property])
+       setForm({...[estado],[property]:""})
+      //  setErrors({...errors,nombre:""})
+    }
 }
 const changeChkHandler=(event)=>{
 
   const property =event.target.name;
   const value= event.target.checked
-
+  
   // if(props.flag===false ) {
   //     dispatch(set_Prev_VideoGames(props.videogames))
   //     dispatch(set_flag_PreVG())
@@ -71,7 +79,8 @@ const changeChkHandler=(event)=>{
   // }
 
   setCheckedState({...checkedState,[property]:value})
-  // filtrado(value, property)
+  setForm({...form,Arrgenrs:property})
+
 
 }
   const validate=(form)=>{
@@ -172,11 +181,11 @@ const changeChkHandler=(event)=>{
               <div  className={styles.mainchks}>
                       <div className={styles.mainchks_opt}>
                           {generos.map(( el,index) =>
-                          {   return <div className={styles.div_options}>
+                          {   return <div key={index} className={styles.div_options}>
                                         <input 
                                             onClick={changeChkHandler} 
                                             className={styles.chkbox} 
-                                            key={index} 
+                                            key={el.nombre} 
                                             type="checkbox" 
                                             checked={checkedState[index]} 
                                             id={el.nombre} 
