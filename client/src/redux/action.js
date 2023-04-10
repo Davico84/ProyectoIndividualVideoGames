@@ -137,9 +137,9 @@ export const updateVideoGames=(data)=>{
            dispatch({type: ACTIVE_FLAG_PREV})
     }
 }
-export const destroyVideogame=()=>{
+export const destroyVideogame=(data)=>{
   
     return  function(dispatch){
-           dispatch({type: DESTROY_VIDEOGAME})
+           dispatch({type: DESTROY_VIDEOGAME,payload:data})
     }
  }

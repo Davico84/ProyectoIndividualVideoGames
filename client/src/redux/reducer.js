@@ -25,7 +25,7 @@ const rootReducer=(state =initialState, action) =>{
             return {...state,videoGame:action.payload}}
         case DESTROY_VIDEOGAME:{
                console.log("entre al destroy?");
-            return {...state,videoGame:[]}}
+            return {...state,videoGame:action.payload}}
         case GET_GENRES:{
             return {...state,genres:action.payload}}
         case SET_ERROR:

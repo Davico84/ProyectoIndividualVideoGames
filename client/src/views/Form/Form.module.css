@@ -1,0 +1,207 @@
+.main{
+    position: relative;
+    width: 1500px;
+    height: 1688px;
+    /* left: 0px; */
+    /* top: 0px; */
+    background: #888;
+    opacity: 0.81;
+}
+.main_titulo_caja{
+    position: absolute;
+    width: 1500px;
+    height: 220px;
+    left: 0px;
+    top: 188px;
+    /* background: rgb(2,0,36); */
+    background: linear-gradient(180deg, rgba(2,0,36,1) 32%, rgba(27,43,147,1) 50%, rgba(1,12,27,1) 72%, rgba(9,59,76,1) 96%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.91;
+
+}
+.main_titulo_texto{
+ /* Vista General */
+    font-family: var(--variable-font-familia);
+    font-size: 80px;
+    line-height: 100px;
+    color: var(--variable-color-fondo-blanco);
+}
+.main_titulo_texto2{
+    font-family: var(--variable-font-familia);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 31px;
+    color: var(--variable-color-fondo-blanco);
+    justify-content: center;
+}
+.main_fondo_menu{
+    position: absolute;
+    width: 1500px;
+    height: 189px;
+    background: url(../../images/mario.jpg);
+  
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+.main_fondo{
+        position: absolute;
+    width: 1070px;
+    height: 1238px;
+    left: 225px;
+    top: 450px;
+
+    background: url(../../images/redy\ 5.jpg);
+    border-radius: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_form{
+
+    position: absolute;
+    width: 780px;
+    height: 1000px;
+    left: 128px;
+    top: 50px;
+    display: flex;
+    background: rgba(217, 217, 217, 0.81);
+    border-radius: 75px;
+}
+.main_form_label_error{
+    color: var(--variable-color-Letra-rojaneon);
+}
+.main_form_txt_linea{
+    position: absolute;
+    width: 776px;
+    height: 0px;
+    left: 0px;
+    bottom: 0px;
+    border: 3px solid rgba(0, 0, 0, 0.41);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
+}
+.main_form__txt{
+    width: 500px;
+    height: 47px;
+    font-size: 40px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #000000;
+    opacity: 0.41;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+.main_form_caja_txt_nombre{
+       display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 125px;
+    background: rgba(255, 255, 255, 0.41);
+}
+.main_form_caja_txt_imagen{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    grid-gap: 10px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 215px;
+    background: rgba(255, 255, 255, 0.41);
+}
+.main_form_caja_txt_rating{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    grid-gap: 10px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 305px;
+    background: rgba(255, 255, 255, 0.41);
+}
+.main_form_caja_txt_feclanz{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    grid-gap: 10px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 395px;
+    background: rgba(255, 255, 255, 0.41);
+}
+.main_form_caja_txt_plataformas{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    grid-gap: 10px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 490px;
+    background: rgba(255, 255, 255, 0.41);
+}
+.main_form_caja_txt_descipcion{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 81px;
+    grid-gap: 10px;
+    gap: 10px;
+    isolation: isolate;
+    position: absolute;
+    width: 619px;
+    height: 50px;
+    left: 128px;
+    top: 585px;
+    background: rgba(255, 255, 255, 0.41);
+}

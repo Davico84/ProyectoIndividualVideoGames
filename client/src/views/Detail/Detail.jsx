@@ -6,6 +6,7 @@ import {get_VideoGame_by_ID,destroyVideogame} from "../../redux/action"
 import {useDispatch,useSelector} from "react-redux"
 import styles from "./Detail.module.css"
 import cargando from "../../images/cargando-loading-039.gif"
+// import cargandosmall from "../../images/carga2.gif"
 
 const Detail = () => {
     const location = useLocation()
@@ -13,19 +14,17 @@ const Detail = () => {
     const dispatch = useDispatch();
     
     useEffect( ()=>{
-        console.log("se disparo al cerrar??");
+        console.log("se disparo alcerrar??");
         dispatch(get_VideoGame_by_ID(idCard));
-        
-        dispatch( destroyVideogame())
+        dispatch( destroyVideogame([]))
+
     },[dispatch,idCard])//array de deoendencias
     
     
     const videogame=  useSelector(state=>state.videoGame)
-    // console.log("este es valo de videogame", videogame);
-    // var ratingcount= (videogame.length===0) ? "no hay datis" 
-    //                                     :Math.round(videogame[0].rating).length
+    
     const formateo= videogame.length ===0  
-                    ?  "sin datos" 
+                    ?  "Cargando" 
                     : videogame[0].descripcion  
     function estrellitas(index) {
         // console.log("entro una estreilla");
@@ -41,14 +40,17 @@ const Detail = () => {
     for (let index = 0; index < starcount; index++) {
         starArr.push(estrellitas(index))
       }              
-
+    // let str = videogame.length ===0 ? [] : videogame[0].plataformas;
+    // console.log("STER",str);
+    // let arrplataform = str.split(','); 
   return (
     <>
     
         <div className={styles.main}>
-        
+        <div className={styles.main_fondo}/>
             <div className={styles.main_parte_1}>
                 <div className={styles.parte_1_difu}/>
+               
                 <img className={styles.parte_1_fondo_game} 
                             src={videogame.length ===0  ?  "Cargando" :videogame[0].image}
                             alt={videogame.length ===0  ?  "Cargando" :videogame[0].nombre}/>  
@@ -63,10 +65,23 @@ const Detail = () => {
                 <div className={styles.parte_1_plataformas}>
                     <div className={styles.parte_1_plataformas_titulo}>PLATAFORMAS</div>
                     <div className={styles.parte_1_plataformas_texto}>
-                        {videogame.length ===0  ?  "Cargando Datos" :videogame[0].plataformas.map(el=>{
+                    {videogame.length ===0  ?  "Cargando Datos" : videogame[0].create===false 
+                                    ?videogame[0].plataformas.map(el=>{
                             return  <span key= {el.index+el}> {el} 
                                         <div  className={styles.parte_1_plataformas_linea}></div>
-                                    </span>})}
+                                    </span>})
+                                    :  videogame[0].plataformas
+                                } 
+                        {/* {videogame.length ===0  ?  "Cargando Datos" : videogame[0].create===false 
+                                    ?videogame[0].plataformas.map(el=>{
+                            return  <span key= {el.index+el}> {el} 
+                                        <div  className={styles.parte_1_plataformas_linea}></div>
+                                    </span>})
+                                    :   arrplataform.map(el=>{
+                            return  <span key= {"01"+el} id="bd"> {el} 
+                                        <div  className={styles.parte_1_plataformas_linea}></div>
+                                     </span>})
+                                }  */}
                     </div>
                 </div>
                 <div className={styles.parte_1_Generos}>
