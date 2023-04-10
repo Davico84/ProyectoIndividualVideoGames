@@ -63,6 +63,15 @@ const Filtros = (props) => {
             dispatch(setFirstPage());
         }
     } 
+
+
+    // const limpiarForm=(estado)=>{
+    //     for (const property in estado) {
+    //         // console.log("propiedad",[property])
+    //          setForm({...[estado],[property]:""})
+    //         //  setErrors({...errors,nombre:""})
+    //       }
+    //   }
     const cleanFilterHandler=()=>{
 
         if (props.flag){
