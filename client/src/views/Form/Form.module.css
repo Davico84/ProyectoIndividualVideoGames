@@ -105,6 +105,7 @@
     flex-grow: 0;
     z-index: 0;
 }
+
 .main_form_caja_txt_nombre{
        display: flex;
     flex-direction: row;
@@ -205,7 +206,7 @@
     top: 585px;
     background: rgba(255, 255, 255, 0.41);
 }
-.main_form__txt_area{
+.main_form__txt_multiline{
     width: 500px;
     height: 98px;
     font-size: 40px;
@@ -224,9 +225,9 @@
 .main_form_caja_opt_generos{
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;;
     /* padding: 20px 20px; */
     padding: 20px 20px;
     /* gap: 10px; */
@@ -235,7 +236,7 @@
     isolation: isolate;
     position: absolute;
     width: 739px;
-    height: 150px;
+    height: 180px;
     left: 128px;
     top: 724px;
     background: rgba(255, 255, 255, 0.41);
@@ -264,6 +265,54 @@
     font-size: 40px;
     line-height: 50px
 }
+.main_caja_boton_env:hover{
+    background: var(--variable-color-Letra-rojaneon);
+}
+.ov_btn_slide_right {
+    width: 350px;
+    height: 95px;
+    
+    top: 940px;
+    background: var(--variable-color-fondo-verdeNeon);
+    color: var(--variable-color-fondo-blanco);
+    border: 2px solid var(--variable-color-fondo-negro);
+    padding: 5px 5px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'Black Ops One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+  }
+  .ov_btn_slide_right:hover {
+    color: var(--variable-color-fondo-negro); 
+  }
+  .ov_btn_slide_right::after {
+    content: "";
+    background: var(--variable-color-fondo-crema); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov_btn_slide_right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
 .main_pie_form{
     /* pieform */
 
@@ -346,6 +395,52 @@ flex-grow: 0;
     order: 0;
     flex-grow: 0;
 }
+
+.ov_btn_slide_boton2 {
+    width: 350px;
+    height: 95px;
+    
+    background: var(--variable-color-fondo-negro);
+    color: var(--variable-color-fondo-verdeNeon);
+    border: 2px solid var(--variable-color-fondo-verdeNeon);
+    padding: 5px 5px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'Black Ops One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+  }
+  .ov_btn_slide_boton2:hover {
+    color: var(--variable-color-fondo-blanco); /* color de fuente hover */
+  }
+  .ov_btn_slide_boton2::after {
+    content: "";
+    
+    background: var(--variable-color-fondo-crema);
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov_btn_slide_boton2:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
 .mainchks{
     display: flex;
     flex-direction: row;

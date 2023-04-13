@@ -149,14 +149,18 @@ const Filtros = (props) => {
             <div className={styles.cuerpo_filtros_titulo}>Filtros</div>
                 <div className={styles.cuerpo_filtros_titulo_icono}/>
             <div className={styles.cuerpo_filtros_contenedor}>
-                <div className={styles.cuerpo_filtros_Subtitulos}>Filtrar por Género:</div> 
-                <div className={styles.chk_activador}>
-                    <input  type="button" 
+                <form> 
+                    <div className={styles.cuerpo_filtros_Subtitulos}>Filtrar por Género:</div> 
+                    <div className={styles.chk_activador}>
+                    {/* <input  type="button" 
                             title="Limpiar Filtros" 
                             onClick={cleanFilterHandler} 
                             className={styles.boton_3d} 
                             value="Limpiar Filtros"
-                    /> 
+                    />  */}
+                     <input className={styles.boton_3d}  onClick={cleanFilterHandler} type="reset" value="Limpiar Filtros">
+
+                     </input>
                 </div>
                     
                 <div  className={styles.mainchks}>
@@ -180,7 +184,7 @@ const Filtros = (props) => {
                         } )}
                     </div>
                 </div>
-                
+                </form>
                 <div className={styles.cuerpo_filtros_Subtitulos}>Filtrar por Origen: </div>
                 <select className={styles.select_css} title="Origen">
                     <option onClick={sourceHandler} value="DEF" defaultValue>Por Defecto</option>

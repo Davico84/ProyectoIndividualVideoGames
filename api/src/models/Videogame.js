@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     descripcion:{
-      type:DataTypes.STRING,
+      type:DataTypes.TEXT,
       allowNull: false
     },
     plataformas: {

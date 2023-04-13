@@ -6,12 +6,14 @@ import {useState}from "react"
 import { useDispatch,useSelector } from "react-redux";
 import axios from "axios"
 
+
+
 const Form = () => {
 
   const dispatch = useDispatch();
   
   useEffect(() => {
-    // console.log("se volvio a cargar Home");
+    
     
     dispatch(get_Genres());
 
@@ -20,10 +22,11 @@ const Form = () => {
 
 
   const generos= useSelector(state=>state.genres)
-
+  
   const [checkedState, setCheckedState] = useState(
     new Array(generos.length).fill(false)
 );
+ 
   const [form,setForm]= useState({
     nombre:"",
     image:"",
@@ -33,79 +36,124 @@ const Form = () => {
     descripcion:"",
     Arrgenrs:[]
   })
-  const [errors,setErrors]= useState({
-    nombre:"",
-    image:"",
-    rating:"",
-    feclan:"2023-04-10",
-    plataformas:"",
-    descripcion:"",
-    Arrgenrs:checkedState
-  })
+  const [errors,setErrors]= useState({ })
+
   const changeHandler=(event)=>{
     const property =event.target.name;
     const value= event.target.value
-    validate({...form,[property]:value})
+
     setForm({...form,[property]:value})
-}
-  const submitHandler =(event)=>{
-    // if(form.nombre ==="" ||form.resumen ==="" ) return alert("debe registrar un nombre y resumen valido para continuar")
-    // form.TiposdeDieta=llenarDietas()
-    event.preventDefault();
-    console.log("que manda form", form)
-    axios.post("http://localhost:3001/videogames/",form)
-    .then(res=>{
-        alert("El registro fue Añadido")
-        limpiarForm(form)})
-    .catch(err=>alert("Error:",err))
+    setErrors(validate({...form,[property]:value}))
 }
 
-const limpiarForm=(estado)=>{
-  for (const property in estado) {
-      // console.log("propiedad",[property])
-       setForm({...[estado],[property]:""})
-      //  setErrors({...errors,nombre:""})
-    }
-}
 const changeChkHandler=(event)=>{
 
   const property =event.target.name;
   const value= event.target.checked
-  
-  // if(props.flag===false ) {
-  //     dispatch(set_Prev_VideoGames(props.videogames))
-  //     dispatch(set_flag_PreVG())
-  //     // console.log("se disparo una vez");
-  // }
-
+ 
   setCheckedState({...checkedState,[property]:value})
-  setForm({...form,Arrgenrs:property})
-
-
+  
 }
-  const validate=(form)=>{
-    // if(form.nombre.length<=3){
-    //     setErrors({...errors,nombre:`Campo "Nombre" Requerido`})
-    // }
-    // else
-    //     setErrors({...errors,nombre:""})
+// const addGenreChkHandler=(event)=>{
+//   dispatch(set_Genre());
+// }
+// const addGenreHandler=(event)=>{
+//   dispatch(set_Genre());
+// }
 
-    // if(form.resumen.length<=3){
-    //     setErrors({...errors,resumen:`Campo "Resumen" Requerido`})
-    //     }
-    // else
-    //     setErrors({...errors,resumen:""})
-  }  
+const cancelarHandler= (event)=>{
+  window.location.replace('');
+}
+const submitHandler =(event)=>{
+    // if(form.nombre ==="" ||form.resumen ==="" ) return alert("debe registrar un nombre y resumen valido para continuar")
+    // form.TiposdeDieta=llenarDietas()
+    event.preventDefault();
+    pushearGenero(checkedState)
 
+    
+    // event.target.reset()
+    // limpiarForm()
+    // limpiarEstados()
+    
+    axios.post("http://localhost:3001/videogames/",form)
+    .then(res=>{
+              alert("El registro fue Añadido")
+              window.location.replace('')
+      })
+    .catch(err=>{
+      // console.log("error", err);
+      if (err.request.response==="") alert("Error General: "+err.message)
+      else alert("Error Capturado en Servidor: "+err.response.data.error)
+    })
+}
 
-  return (
+const pushearGenero=(state)=>{
+  let arreglo=[]
+  
+  for (const property in state) {
+    
+    if  (state[property]=== true){
+      arreglo.push(property);
+    }   
+  }
+ form.Arrgenrs=arreglo
+  
+}
+// const limpiarForm=()=>{
+
+//   for (const property in form) {
+//     form[property]=""
+//   }
+
+// }
+// const limpiarEstados=()=>{
+ 
+//   for (const property in checkedState) {
+
+//     checkedState[property]=false
+//     }
+// }
+
+               
+
+const validate=(form)=>{
+  console.log("entro validate");
+  let errors={}
+  if(!form.nombre) {
+       errors.nombre=`Nombre es campo requerido`;
+      }
+  // else if (/^[0-9a-zA-Z]+$/.test(form.nombre)) {
+  //      errors.nombre = 'Nombre No Valido';
+  //    }
+  else if (form.nombre.length<=2 || form.nombre.length>255){
+       errors.nombre = 'Nombre Muy corto/muy Largo';
+     }
+
+  if(!form.image) 
+     errors.image=`Imagen es campo requerido`;
+    else if (form.image.length<=15 || form.image.length>255){
+     errors.image = 'Link de Imagen Muy corto/muy Largo';
+   }
+   if(!form.rating) 
+    errors.rating=`Rating es campo requerido`;
+    // else if(/^[0-9]+$/.test(form.rating))
+    else if(!/^[0-7]+([.])?([0-9]+)?$/.test(form.rating)){
+      errors.rating = 'Rating solo acepta numeros decimales de 0-7';     
+     }
+    else if (form.rating<=0 || form.rating>7){
+   errors.rating = 'Rating fuera de Intervalo de 0-7';
+ }
+  return errors
+  }
+
+return (
     <>
       
       <div className={styles.main}>
       <div className={styles.main_fondo_menu}/>
       <div className={styles.main_titulo_caja}>
-            <div className={styles.main_titulo_texto}>Listado General</div>
-            <div className={styles.main_titulo_texto2}> Vista resumida de todos los juegos en grupos de 15 por pagina.</div>
+            <div className={styles.main_titulo_texto}>Formulario de Creación</div>
+            <div className={styles.main_titulo_texto2}>Todos los campos son requeridos</div>
       </div>
       <div className={styles.main_fondo}>
         <div className={styles.main_form}/>
@@ -117,29 +165,39 @@ const changeChkHandler=(event)=>{
                     value={form.nombre}
                     onChange={changeHandler} 
                     name="nombre"
+                    // maxLength="255"
+                    required
                   /> 
-                  <span className={styles.main_form_label_error}>nombre</span>
+                  {errors.nombre &&  (<span className={styles.main_form_label_error}> {errors.nombre} </span>)}
+                  
                   <div className={styles.main_form_txt_linea}/>
             </div>
             <div className={styles.main_form_caja_txt_imagen}>
-                  <input type="text" placeholder='Imagen' className={styles.main_form__txt} 
+                  <input type="url" placeholder='https://example.com' className={styles.main_form__txt} 
                     id="txtimage" 
                     value={form.image}
                     onChange={changeHandler} 
                     name="image"
+                    pattern="https://.*" size="30"
+                    required
                   /> 
-                  <span className={styles.main_form_label_error}>imagen</span>
+
+                {errors.image && <span className={styles.main_form_label_error}> {errors.image} </span>}
                   <div className={styles.main_form_txt_linea}/>
             </div>
             <div className={styles.main_form_caja_txt_rating}>
-                  <input type="number" placeholder='Rating' className={styles.main_form__txt} 
-                    id="txtrating" min="0" max ="7" 
+                  <input type="number" placeholder='1.0' className={styles.main_form__txt} 
+                    id="txtrating"
+                    // min="0" max ="7"  
+                    step="0.1"
                     value={form.rating}
                     onChange={changeHandler} 
                     name="rating"
+                    required
                   /> 
-                  <span className={styles.main_form_label_error}>rating</span>
+                {errors.rating && <span className={styles.main_form_label_error}> {errors.rating} </span>}
                   <div className={styles.main_form_txt_linea}/>
+
             </div>
             <div className={styles.main_form_caja_txt_feclanz}>
                   <input type="date" placeholder='Fecha Lanzamiento' className={styles.main_form__txt} 
@@ -148,8 +206,9 @@ const changeChkHandler=(event)=>{
                       onChange={changeHandler} 
                       name="feclan"
                       min="2023-04-10" max="2025-12-31"
+                      required
                   /> 
-                  <span className={styles.main_form_label_error}>fec lanz</span>
+                  {/* <span className={styles.main_form_label_error}>fec lanz</span> */}
                   <div className={styles.main_form_txt_linea}/>
             </div>
             <div className={styles.main_form_caja_txt_plataformas}>
@@ -158,32 +217,36 @@ const changeChkHandler=(event)=>{
                        value={form.plataformas}
                        onChange={changeHandler} 
                        name="plataformas"
+                       maxLength="255"
+                       required
                   /> 
-                  <span className={styles.main_form_label_error}>plataformas</span>
+                  {errors.plataformas && <span className={styles.main_form_label_error}> {errors.plataformas} </span>}
                   <div className={styles.main_form_txt_linea}/>
             </div>
             <div className={styles.main_form_caja_txt_descipcion}>
                   {/* <input type="text" placeholder='Descripcion' className={styles.main_form__txt} />  */}
-                  <textarea className={styles.main_form__txt_area} 
-                                          // value={form.pasoAPaso}
+                  <input type="text" className={styles.main_form__txt_multiline} 
                                           value={form.descripcion}
                                           onChange={changeHandler} 
-                                        name="descripcion"
-                                        rows={20}
-                                        cols={40}
-                                        placeholder="Descripcion"
-                                        />    
-                  <span className={styles.main_form_label_error}>descripcion</span>
+                                          name="descripcion"
+                                          rows={20}
+                                          cols={40}
+                                          placeholder="Descripcion"
+                                          maxLength="3000"
+                                          required
+                  />    
+                  {errors.descripcion && <span className={styles.main_form_label_error}> {errors.descripcion} </span>}
                   <div className={styles.main_form_txt_linea}/>
             </div>
             
             <div className={styles.main_form_caja_opt_generos}>
+                
               <div  className={styles.mainchks}>
                       <div className={styles.mainchks_opt}>
                           {generos.map(( el,index) =>
                           {   return <div key={index} className={styles.div_options}>
                                         <input 
-                                            onClick={changeChkHandler} 
+                                            onChange={changeChkHandler} 
                                             className={styles.chkbox} 
                                             key={el.nombre} 
                                             type="checkbox" 
@@ -198,21 +261,35 @@ const changeChkHandler=(event)=>{
                           } )}
                       </div>
                   </div>
+                  {/* <div>
+                  <input 
+                                            onChange={addGenreChkHandler} 
+                                            className={styles.chkbox} 
+                                            
+                                            type="checkbox" 
+                                            checked={false} 
+                                            id="chkAgregar"
+                                            name="chkAgregar" 
+                                            value ="chkAgregar"  
+                  />  
+                                        <label htmlFor="chkAgregar" >"agregar genero"</  label>
+                                        <input tipe="text" placeholder='Ingrese genero' enable  ></input>
+                                        <input tipe="button" placeholder='Ingrese genero' onClick={addGenreHandler}></input>
+                          
+                  </div> */}
                     <div className={styles.main_form_txt_linea}/>
             </div>
-            
-            {/* <div className={styles.main_caja_boton_env}> */}
-              <button className={styles.main_caja_boton_env} type="submit">Crear VideoJuego</button>
-          
+                     
+              <button className={styles.ov_btn_slide_right} type="submit">Crear VideoJuego</button>
+              
             </form>
-
+                    
             <div className={styles.main_pie_form}>
-                   
                    <div className={styles.main_pie_form_contenedor}>
+                      <button className={styles.ov_btn_slide_boton2} type="button"
+                             onClick={cancelarHandler}>Cancelar
+                      </button>
                        
-                       <input className={styles.main_pie_form_caja_boton} 
-                       type="button" value="Cancelar"
-                       />
                        
                    </div>
            </div>
