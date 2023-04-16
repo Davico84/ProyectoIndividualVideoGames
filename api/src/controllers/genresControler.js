@@ -20,8 +20,22 @@ const getGenresController= async()=>{
     );
     await Promise.all(dataAPI);
     
-    const genresDB= await Genre.findAll({attributes:['id','nombre', 'imagen']})
+    // const genresDB= await Genre.findAll({attributes:['id','nombre', 'imagen']})
+    const genresDB= await Genre.findAll({
+        order: [
+          ['id', 'ASC']]})
 
     return genresDB
 }
-module.exports ={getGenresController};
+const PostGenreController= async(genre)=>{
+    
+    const newGenre = await Genre.findOrCreate({where: {nombre : genre},
+        defaults:{ imagen: "imagen"}
+           })      
+ return newGenre
+
+}
+
+
+
+module.exports ={getGenresController,PostGenreController};

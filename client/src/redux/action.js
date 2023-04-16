@@ -12,7 +12,7 @@ export const SET_PREV_VIDEOGAMES="SET_PREV_VIDEOGAMES";
 export const GET_VIDEOGAME_BY_ID="GET_VIDEOGAME_BY_ID";
 export const DESTROY_VIDEOGAME="DESTROY_VIDEOGAME";
 export const SET_VIDEOGAME="SET_VIDEOGAME"; 
-export const SET_GENRE ="SET_GENRE";
+// export const SET_GENRE ="SET_GENRE";
 let estado=0
 
 
@@ -43,39 +43,45 @@ export const get_VideoGames = () => {
             })
     }
 }
-export const set_Genre = (data) => {
-    return async dispatch=>{
-        return fetch("http://localhost:3001/videogames", {
-                    method: 'POST', // or 'PUT'
-                    body: JSON.stringify(data), // data can be `string` or {object}!
-            })
-            .then(response =>{
-                
-                estado= response.status
-                return response.json()
-            })
-            .then(json =>{
-                if(estado ===400){
-                    dispatch({ type: SET_ERROR,
-                            payload: json
+// export const set_Genre = (data) => {
+  
+//     const params = {
+//         data: data,
+//     };
+//     const options = {
+//         method: 'POST',
+//         body: JSON.stringify( params )  
+//     };
+  
+//     return async dispatch=>{
+//         return fetch("http://localhost:3001/genres", options)
+//             .then(response =>{
+//                 console.log("respuesta", response)
+//                 estado= response.status
+//                 return response.json()
+//             })
+//             .then(json =>{
+//                 if(estado ===400){
+//                     dispatch({ type: SET_ERROR,
+//                             payload: json
 
-                    })
-                }else{
-                    dispatch({ type : SET_GENRE
-                    })
-                }
-            }).catch(error =>{
-                dispatch({ type: SET_ERROR,
-                        payload: error.message
+//                     })
+//                 }else{
+//                     dispatch({ type : SET_GENRE
+//                     })
+//                 }
+//             }).catch(error =>{
+//                 dispatch({ type: SET_ERROR,
+//                         payload: error.message
 
-                })
-            })
-    }
-}
+//                 })
+//             })
+//     }
+// }
 
 export const set_VideoGame = (data) => {
     return async dispatch=>{
-        return fetch("http://localhost:3001/videogames/",data)
+        return fetch("http://localhost:3001/genres/",data)
             .then(response =>{
                 
                 estado= response.status
@@ -100,6 +106,7 @@ export const set_VideoGame = (data) => {
             })
     }
 }
+
 export const get_VideoGame_by_ID = (ID) => {
     
     return async dispatch=>{

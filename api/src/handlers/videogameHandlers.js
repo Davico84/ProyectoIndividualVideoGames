@@ -28,7 +28,7 @@ const getVideoGameByIdHandler=async (req,res)=>{
 }
 const postVideoGameHandler=async(req,res)=>{
     const {nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs} =req.body;
-    console.log("esto llega de body", req.body);
+    // console.log("esto llega de body", req.body);
     const result= await postVideoGameCtrlr(nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs)
     try {
         res.status(200).json(result)

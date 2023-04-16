@@ -79,14 +79,14 @@ const getVideoGameByIdCtrlr=async(id,source)=>{
         
 }
 const postVideoGameCtrlr =async (nombre,descripcion,plataformas,image,feclan,rating,Arrgenrs)=>{
-     console.log("arreglo Generos",Arrgenrs);
+    //  console.log("arreglo Generos",Arrgenrs);
     const genrsDB= await Genre.findAll();
     if(genrsDB.length===0) return {error:"No existen generos registros en la BD."} 
     
     const newVideoGame= await Videogame.create({nombre,descripcion,plataformas,image,feclan,rating})
     const regGenrs= await Genre.findAll({where: { nombre: Arrgenrs }})
-    console.log("esto obtuvo de la bsuqueda en bd", regGenrs);
-    // if(regGenrs.length>0) newVideoGame.addGenre(regGenrs)
+    // console.log("esto obtuvo de la bsuqueda en bd", regGenrs);
+    if(regGenrs.length>0) newVideoGame.addGenre(regGenrs)
 
     return newVideoGame
 }

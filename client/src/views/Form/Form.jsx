@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import  Pie from "../../components/Pie/Pie"
-import { get_Genres } from '../../redux/action';
+import { get_Genres} from '../../redux/action';
 import styles from "./Form.module.css"
 import {useState}from "react"
 import { useDispatch,useSelector } from "react-redux";
@@ -19,14 +19,14 @@ const Form = () => {
 
   }, [dispatch])
 
-
-
   const generos= useSelector(state=>state.genres)
   
   const [checkedState, setCheckedState] = useState(
-    new Array(generos.length).fill(false)
-);
- 
+                                          new Array(generos.length).fill(false));
+  const [genre,setGenre]=useState("")
+  const [errors,setErrors]= useState({ })
+  const [activaGenre,setActivaGenre]=useState(false)
+  const [activaBtnGenre,setActivaBtnGenre]=useState(false)
   const [form,setForm]= useState({
     nombre:"",
     image:"",
@@ -36,9 +36,8 @@ const Form = () => {
     descripcion:"",
     Arrgenrs:[]
   })
-  const [errors,setErrors]= useState({ })
 
-  const changeHandler=(event)=>{
+  const changeFormHandler=(event)=>{
     const property =event.target.name;
     const value= event.target.value
 
@@ -47,30 +46,47 @@ const Form = () => {
 }
 
 const changeChkHandler=(event)=>{
-
   const property =event.target.name;
   const value= event.target.checked
- 
   setCheckedState({...checkedState,[property]:value})
-  
 }
-// const addGenreChkHandler=(event)=>{
-//   dispatch(set_Genre());
-// }
-// const addGenreHandler=(event)=>{
-//   dispatch(set_Genre());
-// }
+const addGenreChkHandler=(event)=>{
+  const value= event.target.checked
+  setActivaGenre(value)
+  if(activaGenre) {setGenre("")
+  // console.log("es hora de klimpiar");  
+  }
+
+}
+const addGenreHandler=(event)=>{
+  
+  const value= event.target.value
+  setGenre(value)
+  setErrors(validateGenre(value))
+  
+ }
+ const submitGenrebtnHandler=()=>{
+  // console.log("loq envia genre", genre);
+  axios.post("http://localhost:3001/genres/",{genre})
+    .then(res=>{
+              alert("El registro fue Añadido")
+              setGenre("")
+              dispatch(get_Genres());
+      })
+    .catch(err=>{
+      if (err.request.response==="") alert("Error General: "+err.message)
+      else alert("Error Capturado en Servidor: "+err.response.data.error)
+    })
+ }
 
 const cancelarHandler= (event)=>{
   window.location.replace('');
 }
 const submitHandler =(event)=>{
-    // if(form.nombre ==="" ||form.resumen ==="" ) return alert("debe registrar un nombre y resumen valido para continuar")
-    // form.TiposdeDieta=llenarDietas()
+
     event.preventDefault();
     pushearGenero(checkedState)
 
-    
     // event.target.reset()
     // limpiarForm()
     // limpiarEstados()
@@ -81,7 +97,6 @@ const submitHandler =(event)=>{
               window.location.replace('')
       })
     .catch(err=>{
-      // console.log("error", err);
       if (err.request.response==="") alert("Error General: "+err.message)
       else alert("Error Capturado en Servidor: "+err.response.data.error)
     })
@@ -114,10 +129,20 @@ const pushearGenero=(state)=>{
 //     }
 // }
 
-               
+const validateGenre=(value)=>{
+  let errors={}
+  const result=generos.find(el=>  el.nombre.toUpperCase() === value.toUpperCase())
+  if (value.length<=3){
+      errors.genero="Nombre demasiado Corto"
+  }else if(typeof result!== "undefined") errors.genero="El genero ya se encuentra registrado"
+  
+  // console.log("errors",errors.genero);
+  if(!errors.genero) setActivaBtnGenre(true)
+  return errors
+}            
 
 const validate=(form)=>{
-  console.log("entro validate");
+  
   let errors={}
   if(!form.nombre) {
        errors.nombre=`Nombre es campo requerido`;
@@ -136,15 +161,15 @@ const validate=(form)=>{
    }
    if(!form.rating) 
     errors.rating=`Rating es campo requerido`;
-    // else if(/^[0-9]+$/.test(form.rating))
     else if(!/^[0-7]+([.])?([0-9]+)?$/.test(form.rating)){
-      errors.rating = 'Rating solo acepta numeros decimales de 0-7';     
+      errors.rating = 'Rating solo acepta numeros de 0-7';     
      }
+    
     else if (form.rating<=0 || form.rating>7){
-   errors.rating = 'Rating fuera de Intervalo de 0-7';
- }
+     errors.rating = 'Rating fuera de Intervalo de 0-7';
+    }
   return errors
-  }
+}
 
 return (
     <>
@@ -163,7 +188,7 @@ return (
                   <input type="text" placeholder='Nombre' className={styles.main_form__txt} 
                     id="txtnom" 
                     value={form.nombre}
-                    onChange={changeHandler} 
+                    onChange={changeFormHandler} 
                     name="nombre"
                     // maxLength="255"
                     required
@@ -176,7 +201,7 @@ return (
                   <input type="url" placeholder='https://example.com' className={styles.main_form__txt} 
                     id="txtimage" 
                     value={form.image}
-                    onChange={changeHandler} 
+                    onChange={changeFormHandler} 
                     name="image"
                     pattern="https://.*" size="30"
                     required
@@ -186,12 +211,13 @@ return (
                   <div className={styles.main_form_txt_linea}/>
             </div>
             <div className={styles.main_form_caja_txt_rating}>
-                  <input type="number" placeholder='1.0' className={styles.main_form__txt} 
+                  {/* <input type="number" placeholder='1.0' className={styles.main_form__txt}  */}
+                  <input type="text" placeholder='1.0' className={styles.main_form__txt} 
                     id="txtrating"
                     // min="0" max ="7"  
                     step="0.1"
                     value={form.rating}
-                    onChange={changeHandler} 
+                    onChange={changeFormHandler} 
                     name="rating"
                     required
                   /> 
@@ -203,7 +229,7 @@ return (
                   <input type="date" placeholder='Fecha Lanzamiento' className={styles.main_form__txt} 
                       id="txtfeclan"
                       value={form.feclan}
-                      onChange={changeHandler} 
+                      onChange={changeFormHandler} 
                       name="feclan"
                       min="2023-04-10" max="2025-12-31"
                       required
@@ -215,7 +241,7 @@ return (
                   <input type="text" placeholder='Plataformas' className={styles.main_form__txt} 
                        id="txtplataformas" 
                        value={form.plataformas}
-                       onChange={changeHandler} 
+                       onChange={changeFormHandler} 
                        name="plataformas"
                        maxLength="255"
                        required
@@ -227,7 +253,7 @@ return (
                   {/* <input type="text" placeholder='Descripcion' className={styles.main_form__txt} />  */}
                   <input type="text" className={styles.main_form__txt_multiline} 
                                           value={form.descripcion}
-                                          onChange={changeHandler} 
+                                          onChange={changeFormHandler} 
                                           name="descripcion"
                                           rows={20}
                                           cols={40}
@@ -261,22 +287,36 @@ return (
                           } )}
                       </div>
                   </div>
-                  {/* <div>
-                  <input 
+                  <div className={styles.div_agre_genre}>
+                            <div className={styles.div_chk_add}>
+                              <input 
                                             onChange={addGenreChkHandler} 
                                             className={styles.chkbox} 
                                             
                                             type="checkbox" 
-                                            checked={false} 
+                                            // checked={false}
                                             id="chkAgregar"
                                             name="chkAgregar" 
                                             value ="chkAgregar"  
-                  />  
-                                        <label htmlFor="chkAgregar" >"agregar genero"</  label>
-                                        <input tipe="text" placeholder='Ingrese genero' enable  ></input>
-                                        <input tipe="button" placeholder='Ingrese genero' onClick={addGenreHandler}></input>
-                          
-                  </div> */}
+                               />  
+                              <label htmlFor="chkAgregar" >Agregar genero</  label>
+
+                            </div>
+                              <input tipe="text" 
+                                         placeholder='Ingrese genero' 
+                                              hidden={!activaGenre}
+                                            onChange={addGenreHandler}
+                                            value={genre}
+                                               
+                              />
+                              <input type='button' 
+                                              hidden={!activaGenre} 
+                                              disabled={!activaBtnGenre}
+                                              value="Añadir Genero"
+                                              onClick={submitGenrebtnHandler}/>
+                            {errors.genero && <span className={styles.main_form_label_error}> {errors.genero} </span>}
+                                                                    
+                  </div> 
                     <div className={styles.main_form_txt_linea}/>
             </div>
                      
