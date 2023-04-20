@@ -96,7 +96,7 @@ const Filtros = (props) => {
         if(props.flag===false ) {
             dispatch(set_Prev_VideoGames(props.videogames))
             dispatch(set_flag_PreVG())
-            // console.log("se disparo una vez");
+            console.log("se disparo en CHK HANDLER FILTROS");
         }
 
         setCheckedState({...checkedState,[property]:value})
@@ -107,7 +107,7 @@ const Filtros = (props) => {
     const sortByButton=(property)=>{
         
         let result=[]
-        // const data = (props.flag) ? videogamesPrev : props.videogames
+        
         const data = props.videogames
         switch (property) {
             case "API":
@@ -133,6 +133,7 @@ const Filtros = (props) => {
     const sourceHandler=(event)=>{
         if(props.flag===false ) {
             dispatch(set_Prev_VideoGames(props.videogames))
+            console.log("se disparo en SOURCE HANDLER FILTROS");
             dispatch(set_flag_PreVG())
             
         }

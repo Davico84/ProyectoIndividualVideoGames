@@ -49,7 +49,7 @@ const Home = () => {
            <CardContainer videogames={videogames} porPagina={porPagina} pagina={pagina} error={error} />
         </div>
         <div className={styles.cuerpo_ordenamiento}>
-            <Ordenamiento videogames={videogames}/>
+            <Ordenamiento videogames={videogames}  flag={flag_prev}/>
         </div> 
         
       

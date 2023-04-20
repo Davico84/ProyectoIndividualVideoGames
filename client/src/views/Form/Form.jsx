@@ -83,7 +83,11 @@ const cancelarHandler= (event)=>{
   window.location.replace('');
 }
 const submitHandler =(event)=>{
-
+   /**
+    NOTA:
+    solo se usa dispatch cuando voy a realizar un cambio en el estado global , sino es asi puedes 
+    hacer directamente una peticion al servidor.
+    */
     event.preventDefault();
     pushearGenero(checkedState)
 
@@ -310,6 +314,7 @@ return (
                                                
                               />
                               <input type='button' 
+                                              className={styles.boton}
                                               hidden={!activaGenre} 
                                               disabled={!activaBtnGenre}
                                               value="Añadir Genero"

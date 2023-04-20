@@ -1,7 +1,7 @@
 .main{
     position: relative;
     width: 1500px;
-    height: 1688px;
+    height: 1684px;
     /* left: 0px; */
     /* top: 0px; */
     background: #888;
@@ -482,7 +482,7 @@ flex-grow: 0;
     border-radius: 8px;
     /* height: 115px; */
     justify-content: center;
-    height: 132px;
+    height: 160px;
     width: 645px;
     flex-wrap: nowrap;
     padding: 8px;
@@ -550,4 +550,9 @@ flex-grow: 0;
     align-content: stretch;
     flex-direction: row;
    
+}
+.boton{
+    color:var(--variable-color-Letra-rojaneon);
+    font-family: var(--variable-font-familia);
+    font-size: 15px;
 }

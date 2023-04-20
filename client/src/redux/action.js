@@ -193,7 +193,7 @@ export const updateVideoGames=(data)=>{
     }
  }
  export const set_Prev_VideoGames=(data)=>{
-  
+console.log("alguien llamo a SET PREV??")  
     return  function(dispatch){
            dispatch({type: SET_PREV_VIDEOGAMES,payload:data})
     }
