@@ -1,96 +1,141 @@
 .main_NavBar{
-   
-    width: 1500px;
-    height: 117px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    grid-gap: 30px;
+    gap: 30px;
+    position: absolute;
+    width: 1480px;
+    height: 107.94px;
     left: 0px;
     top: 0px;
-    background: var(--variable-color-fondo-negro);
-    opacity: 0.51;
     z-index: 1;
-    position: absolute;
+    background: var(--variable-color-fondo-negro) ;
+    opacity: 0.89;
+}
+.main_NavBar_icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 20px;
+    grid-gap: 20px;
+    gap: 25px;
+      row-gap: 25px;
+      column-gap: 25px;
+    width: 400px;
+    height: 100px;
+    flex: none;
+      flex-grow: 0;
+    flex-grow: 0;
+    order: 0;
+    flex-grow: 0;
+    /* background: var(--variable-color-fondo-negro); */
+}
+.main_NavBar_Menu{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 50px;
+    gap: 40px;
+
+    width: 945px;
+    height: 100px;
+
+    /* background: var(--variable-color-fondo-negro); */
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.main_NavBar_Menu_Caja{
+        /* Men1 */
+
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 200px;
+    height: 68px;
+
+    background: var(--variable-color-fondo-negro);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
-.main_NavBar_Menu1{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left:600px;
-    top: 36px;
-    /* background-color: blue; */
-    z-index: 2;
-}
+.main_NavBar_Menu_Caja_item{
 
-.main_NavBar_Menu2{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left: 799px;
-    top: 36px;
-    /* background-color: blue; */
-    z-index: 2;
-}
+    width: 175px;
+    height: 44px;
 
-.main_NavBar_Menu3{
-    position: absolute;
-    width: 180px;
-    height: 54px;
-    left: 991px;
-    top: 36px;
-    /* background-color: blue; */
-    z-index: 2;
-}
-
-.main_NavBar_Menu4{
-    position: absolute;
-    width: 246px;
-    height: 54px;
-    left: 1220px;
-    top: 36px;
-    z-index: 2;
-    /* background-color: blue; */
-}
-
-.main_menu_efecto_item {
     font-family:  var(--variable-font-familia);
     font-style: var(--variable-font-style);
     font-weight: var(--variable-font-weigth);
-    position: absolute;
-    font-size: 36px;
-    line-height: 1.5em;
-    color: var(--variable-color-fondo-blanco);
-    left: 39px;
-    border-radius: 3px; /* redondear bordes */
-    /* position: relative; */
-    z-index: 1;
-    overflow: hidden;
+    font-size: 35px;
+    line-height: 44px;
+    
+
     display: inline-block;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+
+    color: var(--variable-color-fondo-blanco);
+    border-radius: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 1;
+    position: relative;
+
 }
-.main_menu_efecto_item:hover {
+.main_NavBar_Menu_Caja_item:hover {
     color:var(--variable-color-Letra-rojaneon);
     background-color:  var(--variable-color-fondo-blanco);
 }
-.main_menu_efecto_item::after {
+.main_NavBar_Menu_Caja_item::after {
     content: "";
-    background: var(--variable-color-fondo-verdeNeon);/* color de fondo hover */
+    background: var(--variable-color-fondo-verdeNeon);
     position: absolute;
     z-index: -1;
-    padding: 16px 20px;
+    padding: 30px 88px;
     display: block;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+
     transform: scale(0, 0);
     transition: all 0.3s ease;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 }
-.main_menu_efecto_item:hover::after {
+.main_NavBar_Menu_Caja_item:hover::after {
     transition: all 0.3s ease-out;
     transform: scale(1, 1);
  }
 
 
 .main_NavBar_Menu_active{
-    position: absolute;
+   position: relative;
     font-size: 44px;
     line-height: 45px;
     color: var(--variable-color-Letra-VerdeNeon);
@@ -98,21 +143,13 @@
     text-align: center;
     left: 5px;
     top: 2px;
+    text-decoration: underline; 
+    text-decoration-color: black; 
+    
 }
 
 
-.main_NavBar_icons{
-    position: absolute;
-    width: 248px;
-    height: 97.92px;
-    /* background: aqua; */
-    left: 30px;
-    top: 17px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    z-index: 2;
-}
+
 .main_NavBar_icon1{
 
     width: 70px;
