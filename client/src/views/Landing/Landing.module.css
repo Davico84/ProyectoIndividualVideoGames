@@ -199,30 +199,44 @@
   position: absolute;
   width: 25%;
   height: 316px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
+  
   top: 89px;
-  background-color: brown;
+  
   z-index: 4;
 }
 
 .parte3_caja1 {
   background: url(../../images/justice\ league.jpg);
   z-index: 5;
+  height: 100%;
+  width: 100%;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .parte3_caja2 {
   background: url(../../images/witcher\ 3.jpg);
   z-index: 5;
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .parte3_caja3 {
   background: url(../../images/tomb\ raider.jpg);
   z-index: 5;
   position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .parte3_cards {
   display: flex;

@@ -36,43 +36,35 @@ const Landing = () => {
           </div>
 
           <div className={styles.parte3}>
-  <div className={styles.parte3_fondo} />
-  <div className={styles.parte3_cabecera} />
-  <div className={styles.parte3_cards}>
-    <div className={styles.parte3_cabecera1}>
-      <div className={styles.parte3_cabecera_text}>
-      Injustice: Gods Among Us Ultimate Edition
-      </div>
-      <div className={styles.parte3_caja}>
-      
-        <div className={styles.parte3_caja1} >
-          <img src="../../images/justice league.jpg" alt="Justice League" />
-        </div>
-      </div>
-    </div>
-    <div className={styles.parte3_cabecera2}>
-      <div className={styles.parte3_cabecera_text}>
-        The Witcher 3: Wild Hunt
-      </div>
-      <div className={styles.parte3_caja}>
-        <div className={styles.parte3_caja2} >
-        <img src="../../images/witcher 3.jpg" alt="The Witcher 3" />
-        </div>
-      </div>
-    </div>
-    <div className={styles.parte3_cabecera3}>
-      <div className={styles.parte3_cabecera_text}>
-        Tomb Raider (2013)
-      </div>
-      <div className={styles.parte3_caja}>
-        <div className={styles.parte3_caja3} >
-          <img src="../../images/tomb raider.jpg" alt="Tomb Raider" />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+            <div className={styles.parte3_fondo} />
+            <div className={styles.parte3_cabecera} />
+            <div className={styles.parte3_cards}>
+              <div className={styles.parte3_cabecera1}>
+                <div className={styles.parte3_cabecera_text}>
+                  Injustice: Gods Among Us Ultimate Edition
+                </div>
+                <div className={styles.parte3_caja}>
+                  <div className={styles.parte3_caja1}></div>
+                </div>
+              </div>
+              <div className={styles.parte3_cabecera2}>
+                <div className={styles.parte3_cabecera_text}>
+                  The Witcher 3: Wild Hunt
+                </div>
+                <div className={styles.parte3_caja}>
+                  <div className={styles.parte3_caja2}></div>
+                </div>
+              </div>
+              <div className={styles.parte3_cabecera3}>
+                <div className={styles.parte3_cabecera_text}>
+                  Tomb Raider (2013)
+                </div>
+                <div className={styles.parte3_caja}>
+                  <div className={styles.parte3_caja3}></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className={styles.parte4}>
             <Pie />
