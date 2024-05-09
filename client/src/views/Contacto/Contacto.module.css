@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    
+  }
+  
+  .content {
+    flex: 1;
+    left: 100px;
+    top: 118px;
+    position: relative;
+    /* background-color: aqua; */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Cambia a una disposición vertical en pantallas más pequeñas */
+    }
+  
+    .content {
+      left: 188px;
+      top: 5px;
+      order: 1;
+      width: calc(100% - 200px);
+      position: fixed;
+    }
+  }
+  

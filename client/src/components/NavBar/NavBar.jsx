@@ -34,27 +34,22 @@ const NavBar = () => {
                 <div className={styles.main_NavBar_Menu_Caja}>
                   <Link to="/acerca"> 
                    { location.pathname==="/acerca" 
-                                          ? <div className={styles.main_NavBar_Menu_active}>Acerca </div>
-                                          :<div className={styles.main_NavBar_Menu_Caja_item}>Acerca </div>}           
+                                          ? <div className={styles.main_NavBar_Menu_active}>About </div>
+                                          :<div className={styles.main_NavBar_Menu_Caja_item}>About </div>}           
                   </Link> 
                 </div>
                 <div className={styles.main_NavBar_Menu_Caja}>
                   <Link to="/contacto"> 
                    { location.pathname==="/contacto" 
-                                          ? <div className={styles.main_NavBar_Menu_active}>Contacto </div>
-                                          :<div className={styles.main_NavBar_Menu_Caja_item}>Contacto</div>}           
+                                          ? <div className={styles.main_NavBar_Menu_active}>Contact </div>
+                                          :<div className={styles.main_NavBar_Menu_Caja_item}>Contact</div>}           
                   </Link> 
                 </div>
 
             </div>
        
         </div>
-            {/* <div className={styles.main_NavBar}/>
-               <div className={styles.main_NavBar_icons}>
-              <div className={styles.main_NavBar_icon1}></div>
-              <div className={styles.main_NavBar_icon2}></div>
-              <div className={styles.main_NavBar_icon3}></div>
-            </div> */}
+      
 
     </>
    

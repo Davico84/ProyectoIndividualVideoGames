@@ -1,213 +1,249 @@
-.main_NavBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 10px;
-    grid-gap: 30px;
-    gap: 30px;
-    position: absolute;
-    width: 1480px;
-    height: 107.94px;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-    background: var(--variable-color-fondo-negro) ;
-    opacity: 0.89;
+.main_NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 30px;
+  position: absolute;
+  width: 100%; /* Usamos el ancho completo de la pantalla */
+  /* max-width: 1300px; Establecemos un ancho máximo */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  left: 0;
+  right: 0;
+  /* margin-left: auto;
+  margin-right: auto; */
+  z-index: 1;
+  background: var(--variable-color-fondo-negro);
+  opacity: 0.89;
 }
-.main_NavBar_icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 2px 20px;
-    grid-gap: 20px;
-    gap: 25px;
-      row-gap: 25px;
-      column-gap: 25px;
-    width: 400px;
-    height: 100px;
-    flex: none;
-      flex-grow: 0;
-    flex-grow: 0;
-    order: 0;
-    flex-grow: 0;
-    /* background: var(--variable-color-fondo-negro); */
+.main_NavBar_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 20px;
+  grid-gap: 20px;
+  gap: 25px;
+  row-gap: 25px;
+  column-gap: 25px;
+  width: 12%;
+  height: 100px;
+  flex: none;
+  flex-grow: 0;
+  flex-grow: 0;
+  order: 0;
+  flex-grow: 0;
+  /* background: var(--variable-color-fondo-negro); */
 }
-.main_NavBar_Menu{
+.main_NavBar_Menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 50px;
+  gap: 40px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 50px;
-    gap: 40px;
+  width: 70%;
+  height: 100px;
 
-    width: 945px;
-    height: 100px;
-
-    /* background: var(--variable-color-fondo-negro); */
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
-.main_NavBar_Menu_Caja{
-        /* Men1 */
+.main_NavBar_Menu_Caja {
+  /* Men1 */
 
+  /* Auto layout */
 
-    /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
+  width: 200px;
+  height: 68px;
 
-    width: 200px;
-    height: 68px;
+  background: var(--variable-color-fondo-negro);
 
-    background: var(--variable-color-fondo-negro);
+  /* Inside auto layout */
 
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
-.main_NavBar_Menu_Caja_item{
+.main_NavBar_Menu_Caja_item {
+  width: 175px;
+  height: 44px;
 
-    width: 175px;
-    height: 44px;
+  font-family: var(--variable-font-familia);
+  font-style: var(--variable-font-style);
+  font-weight: var(--variable-font-weigth);
+  font-size: 35px;
+  line-height: 44px;
 
-    font-family:  var(--variable-font-familia);
-    font-style: var(--variable-font-style);
-    font-weight: var(--variable-font-weigth);
-    font-size: 35px;
-    line-height: 44px;
-    
+  display: inline-block;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
 
-    display: inline-block;
-    overflow: hidden;
-    align-items: center;
-    text-align: center;
-
-    color: var(--variable-color-fondo-blanco);
-    border-radius: 8px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    z-index: 1;
-    position: relative;
-
+  color: var(--variable-color-fondo-blanco);
+  border-radius: 8px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 1;
+  position: relative;
 }
 .main_NavBar_Menu_Caja_item:hover {
-    color:var(--variable-color-Letra-rojaneon);
-    background-color:  var(--variable-color-fondo-blanco);
+  color: var(--variable-color-Letra-rojaneon);
+  background-color: var(--variable-color-fondo-blanco);
 }
 .main_NavBar_Menu_Caja_item::after {
-    content: "";
-    background: var(--variable-color-fondo-verdeNeon);
-    position: absolute;
-    z-index: -1;
-    padding: 30px 88px;
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  content: "";
+  background: var(--variable-color-fondo-verdeNeon);
+  position: absolute;
+  z-index: -1;
+  padding: 30px 88px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 
-    transform: scale(0, 0);
-    transition: all 0.3s ease;
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 .main_NavBar_Menu_Caja_item:hover::after {
-    transition: all 0.3s ease-out;
-    transform: scale(1, 1);
- }
-
-
-.main_NavBar_Menu_active{
-   position: relative;
-    font-size: 44px;
-    line-height: 45px;
-    color: var(--variable-color-Letra-VerdeNeon);
-    display: flex;
-    text-align: center;
-    left: 5px;
-    top: 2px;
-    text-decoration: underline; 
-    text-decoration-color: black; 
-    
+  transition: all 0.3s ease-out;
+  transform: scale(1, 1);
 }
 
-
-
-.main_NavBar_icon1{
-
-    width: 70px;
-    height: 75px;
-    background:  var(--variable-color-fondo-blanco);
-    
-    background: url(../../images/Facebook.png) ;
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+.main_NavBar_Menu_active {
+  position: relative;
+  font-size: 44px;
+  line-height: 45px;
+  color: var(--variable-color-Letra-VerdeNeon);
+  display: flex;
+  text-align: center;
+  left: 5px;
+  top: 2px;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 
-.main_NavBar_icon1:hover{
-    width: 75px;
-    height: 65px;
+.main_NavBar_icon1 {
+  width: 70px;
+  height: 75px;
+  background: var(--variable-color-fondo-blanco);
+
+  background: url(../../images/Facebook.png);
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.main_NavBar_icon2{
 
-    width: 70px;
-    height: 75px;
-
-    background:  var(--variable-color-fondo-blanco);
-    
-    background: url(../../images/Instagram.png) ;
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+.main_NavBar_icon1:hover {
+  width: 75px;
+  height: 65px;
 }
-.main_NavBar_icon2:hover{
-    width: 75px;
-    height: 65px;
-}
-.main_NavBar_icon3{
+.main_NavBar_icon2 {
+  width: 70px;
+  height: 75px;
 
-    width: 69px;
-    height: 57px;
+  background: var(--variable-color-fondo-blanco);
 
-    background:  var(--variable-color-fondo-blanco);
-    background: url(../../images/Vectortwt.png) ;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.main_NavBar_icon3:hover{
-    width: 75px;
-    height: 65px;
-}
-.main_fonfo_titu{
-    /* fondo titulo */
-    position: absolute;
-    width: 557px;
-    height: 503px;
-    left: 0px;
-    top: 202px;
+  background: url(../../images/Instagram.png);
 
-    background: var(--variable-color-fondo-neon);
-    opacity: 0.25;
-    border-radius: 0px 38px 38px 0px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main_NavBar_icon2:hover {
+  width: 75px;
+  height: 65px;
+}
+.main_NavBar_icon3 {
+  width: 70px;
+  height: 75px;
+
+  background: var(--variable-color-fondo-blanco);
+  background: url(../../images/Vectortwt.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main_NavBar_icon3:hover {
+  width: 75px;
+  height: 65px;
+}
+.main_fonfo_titu {
+  /* fondo titulo */
+  position: absolute;
+  width: 557px;
+  height: 503px;
+  left: 0px;
+  top: 202px;
+
+  background: var(--variable-color-fondo-neon);
+  opacity: 0.25;
+  border-radius: 0px 38px 38px 0px;
+}
+@media (max-width: 768px) {
+  /* Estilos para pantallas más pequeñas */
+  .main_NavBar {
+    /* Otros estilos */
+    width: 31%; /* Reducir el ancho de la barra de navegación */
+    max-width: none; /* Eliminar el ancho máximo */
+    margin: 0; /* Asegurarse de que no haya margen automático */
+    /* Otros estilos */
+  }
+  .main_NavBar {
+    flex-direction: column; /* Cambiamos la dirección del flexbox a columna */
+    align-items: flex-start; /* Alineamos los elementos a la izquierda */
+    justify-content: flex-start; /* Justificamos los elementos arriba */
+    position: fixed; /* Fijamos la barra de navegación en la parte superior */
+    top: 0; /* Colocamos la barra en la parte superior */
+    left: -70px; /* Colocamos la barra en la parte izquierda */
+    z-index: 1000; /* Aseguramos que esté por encima del contenido */
+  }
+
+  .main_NavBar_icons {
+    display: none; /* Ocultar la barra de iconos en pantallas más pequeñas */
+  }
+  .main_NavBar_Menu {
+    flex-direction: column; /* Cambiamos la dirección del flexbox a columna */
+    align-items: stretch; /* Los elementos se estirarán para ocupar todo el ancho */
+    height: auto;
+    width: 32%; /* Los elementos ocupan todo el ancho disponible */
+    padding: 4px 10px; /* Reducir el padding */
+    align-items: flex-start; /* Alinear al inicio */
+    gap: 10px; /* Reducir el espacio entre elementos */
+    justify-content: center; /* Centramos los elementos */
+    padding: 4px 10px; /* Reducir el padding */
+
+  }
+
+  .main_NavBar_Menu_Caja {
+    padding: 8px; /* Reducir el padding */
+    gap: 5px; /* Reducir el espacio entre elementos */
+
+    height: auto; /* Altura automática para adaptarse al contenido */
+  }
+  .main_NavBar_Menu_Caja_item {
+    font-size: 25px; /* Reducir el tamaño del texto */
+    height: 40px; /* Reducir la altura de los elementos */
+  }
+  .main_NavBar_Menu_active {
+    font-size: 34px;
+    left: 20px;
+  }
 }
