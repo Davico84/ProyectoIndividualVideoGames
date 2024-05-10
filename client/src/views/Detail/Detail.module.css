@@ -1,13 +1,22 @@
 .main{
-
+    display: flex;
     position: relative;
-    width: 1500px;
-    height: 2220px;
+
+    width: 100%;
+    max-width: 1200px;
+    /* height: 2220px; */
     background: var(--variable-color-fondo-negro);
 }
+.content {
+    flex: 1;
+    left: 100px;
+    top: 118px;
+    position: relative;
+  }
  .main_fondo{
     position: absolute;
-    width: 1500px;
+    width: 100%;
+    max-width: 1200px;
     height: 189px;
     background: url(../../images/mario.jpg);
   
@@ -21,7 +30,8 @@
  }
 .main_parte_1{
     position: absolute;
-    width: 1497px;
+    width: 100%;
+    max-width: 1200px;
     height: 1189px;
     left: 3px;
     top: 189px;
@@ -29,8 +39,8 @@
 .parte_1_difu{
     /* difuminado */
     position: absolute;
-    width: 303.78px;
-    height: 1189.39px;
+    width: 25%;
+  height: 71.5%;
     left: -3px;
     top: 0px;
 
@@ -40,9 +50,9 @@
 .parte_1_fondo_game{
     /* fondo */
     position: absolute;
-    width: 1199px;
-    height: 1189px;
-    left: 298px;
+    width: 900px;
+    height: 850px;
+    left: 297px;
     top: 0px;
 
     background: linear-gradient(89.85deg, rgba(0, 0, 0, 0.8) 0.14%, rgba(0, 0, 0, 0.745833) 3.14%, rgba(0, 0, 0, 0.692345) 6.66%, rgba(0, 0, 0, 0.6625) 10.17%, rgba(0, 0, 0, 0.610563) 13.87%, rgba(0, 0, 0, 0.579167) 17.73%, rgba(0, 0, 0, 0.538652) 21.25%, rgba(0, 0, 0, 0.5) 25.11%, rgba(0, 0, 0, 0.45546) 29.16%, rgba(0, 0, 0, 0.416667) 32.68%, rgba(0, 0, 0, 0.390545) 36.72%, rgba(0, 0, 0, 0.358333) 40.59%, rgba(0, 0, 0, 0.327147) 44.28%, rgba(0, 0, 0, 0.289076) 48.15%, rgba(0, 0, 0, 0.254167) 51.66%, rgba(0, 0, 0, 0.219985) 55.18%, rgba(0, 0, 0, 0.183333) 57.81%, rgba(0, 0, 0, 0.148073) 61.5%, rgba(0, 0, 0, 0.116667) 65.02%, rgba(0, 0, 0, 0.0666667) 67.48%, rgba(0, 0, 0, 0.0380905) 70.47%, rgba(0, 0, 0, 0) 73.98%);
@@ -59,10 +69,10 @@
     grid-gap: 0px;
     gap: 2%;
     position: absolute;
-    width: 1126px;
-    height: 154px;
+    width: 70%;
+    height: 8%;
     left: 319px;
-    top: 23px;
+    top: 10px;
     background: rgba(0, 0, 0, 0.41);
     border-radius: 10px;
     align-items: center;
@@ -70,12 +80,12 @@
     flex-wrap: nowrap;
 }
 .parte_1_cabecera_titulo{
-    width: 1000px;
-    height: 122px;
+    width: 100%;
+    height: 10%;
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 80%;
     display: flex;
     align-items: center;
@@ -90,8 +100,8 @@
     flex-wrap: nowrap;
 }
 .parte_1_cabecera_subtitulo{
-    width: 1000px;
-    height: 55px;
+    width: 100%;
+    height: 10%;
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
@@ -117,53 +127,56 @@
     padding: 0px;
 
     position: absolute;
-    width: 398px;
-    height: 400px;
+    width: 30%;
+    height: 25%;
 
     left: 319px;
-    top: 220px;
+    top: 130px;
 
     background: rgba(0, 0, 0, 0.41);
     border-radius: 10px;
 }
 .parte_1_plataformas_titulo{
 /* PLATAFORMAS */
-    width: 328.62px;
-    height: 71.25px;
-    font-family: 'Black Ops One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 50px;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--variable-color-fondo-crema);
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+width: 70%;
+height: 71.25px;
+font-family: 'Black Ops One';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 50px;
+letter-spacing: 2px;
+display: flex;
+align-items: center;
+text-align: center;
+color: var(--variable-color-fondo-crema);
+flex: none;
+  flex-grow: 0;
+order: 0;
+flex-grow: 0;
 }
 .parte_1_plataformas_texto{
-    width: 400px;
-    height: 325px;
-    font-family: 'Black Ops One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 5px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    flex: none;
-    order: 1;
+    width: 80%;
+
+  height: 60%;
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 0px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  flex: none;
     flex-grow: 0;
-    flex-direction: column;
-    justify-content: space-evenly;
+  order: 1;
+  flex-grow: 0;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .parte_1_plataformas_linea{
-    width: 310px;
+    width: 250px;
     height: 0px;
     border: 1px solid var(--variable-color-fondo-verdeNeon);
     position: relative;
@@ -178,10 +191,10 @@
     align-items: center;
     padding: 0px;
     position: absolute;
-    width: 398px;
-    height: 400px;
+    width: 30%;
+    height: 25%;
     left: 319px;
-    top: 640px;
+    top: 440px;
 
     background: rgba(0, 0, 0, 0.41);
     border-radius: 10px;
@@ -194,7 +207,7 @@
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 50px;
     letter-spacing: 2px;
     display: flex;
@@ -207,12 +220,12 @@
     justify-content: space-evenly;
 }
 .parte_1_Generos_texto{
-    width: 400px;
-    height: 325px;
+    width: 90%;
+  height: 70%;
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 5px;
     display: flex;
     align-items: center;
@@ -235,22 +248,22 @@
     gap: 70px;
 
     position: absolute;
-    width: 1080px;
+    width: 64.5%;
     height: 74px;
     left: 319px;
-    top: 1081px;
+    top: 750px;
 
     background: rgba(0, 0, 0, 0.41);
     border-radius: 10px;
 }
 .parte1_feclan_titulo{
-        width: 469px;
+        width: 50%;
     height: 50px;
 
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 50px;
     /* identical to box height */
 
@@ -268,7 +281,7 @@
     flex-grow: 0;
 }
 .parte1_feclan_fecha{
-    width: 469px;
+    width: 50%;
     height: 50px;
     font-family: 'Black Ops One';
     font-style: normal;
@@ -291,10 +304,10 @@
     align-items: center;
     padding: 10px;
     position: absolute;
-    width: 355px;
-    height: 254px;
-    left: 1047px;
-    top: 764px;
+    width: 25%;
+  height: 15%;
+  left: 857px;
+    top: 540px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.41);
 }
@@ -307,7 +320,7 @@
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 75px;
     /* identical to box height */
 
@@ -354,14 +367,14 @@
     font-family: 'Black Ops One';
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 10px;
     display: flex;
 }
 
 .parte_1_rating_estrella{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background: url(../../images/star.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -374,7 +387,7 @@
     align-items: center;
     padding: 10px;
     position: absolute;
-    width: 355px;
+    width: 30%;
     height: 200px;
     left: -49px;
     top: 500px;
@@ -400,10 +413,11 @@
 }
 .main_parte_2{
     position: absolute;
-    width: 1500px;
+    width: 100%;
+    max-width: 1200px;
     height: 841px;
     /* left: 0px; */
-    top: 1378.39px;
+    top: 1040px;
 
 }
 .main_parte_2_cuadro_{
@@ -411,7 +425,8 @@
 
 
     position: absolute;
-    width: 1500px;
+    width: 100%;
+    max-width: 1200px;
     height: 841px;
     left: 0px;
     top: 0px;
@@ -423,7 +438,8 @@
     /* detalledescrip */
     position: absolute;
     display: flex;
-    width: 1500px;
+    width: 99%;
+    max-width: 1200px;
     height: 661px;
     left: 5px;
     top: 95px;
@@ -458,7 +474,8 @@
 }
 .main_parte_2_texto{
     position: relative;
-    width: 1420px;
+    width: 90%;
+    max-width: 1200px;
     height: 641px;
     /* left: 94px; */
     /* top: 127px; */
@@ -513,4 +530,13 @@
     bottom: 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
+  }
+  .parte4 {
+    position: absolute;
+    width: 1200px;
+    height: 1511px;
+    left: 0px;
+    top: 2135px;
+  
+    opacity: 0.87;
   }

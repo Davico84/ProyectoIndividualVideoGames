@@ -47,6 +47,7 @@ const Detail = () => {
     <>
     
         <div className={styles.main}>
+        <div className={styles.content}>
         <div className={styles.main_fondo}/>
             <div className={styles.main_parte_1}>
                 <div className={styles.parte_1_difu}/>
@@ -141,8 +142,12 @@ const Detail = () => {
 
                     </div>
             </div>
+        <div className={styles.parte4}>
+            <Pie />
+          </div>
         </div>
-        <Pie/>
+        </div>
+        
     </>
   )
 }
